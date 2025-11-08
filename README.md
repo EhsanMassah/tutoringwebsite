@@ -20,6 +20,10 @@ Environment variables
 
 - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS — for Nodemailer (optional)
 - ADMIN_EMAIL — email to receive lead notifications
+- AUTOREPLY_SUBJECT (optional) — custom subject line for the client acknowledgement email
+- AUTOREPLY_BODY (optional) — plain-text body for the client acknowledgement email
+- AUTOREPLY_DISABLED (optional) — set to `true` to skip autoresponder even when SMTP is configured
+- Copy `.env.example` to `.env.local` and fill in the values above before running `npm run dev` if you want to test the full email flow locally.
 
 Files of interest
 
@@ -28,6 +32,7 @@ Files of interest
 - `components/` — reusable UI pieces
 - `lib/validation.ts` — zod schemas for forms
 - `data/subjects.ts` — seed subjects
+- `data/leads.json` — generated at runtime; stores the most recent lead submissions (gitignored)
 
 # Managing content
 
