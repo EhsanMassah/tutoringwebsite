@@ -1,5 +1,5 @@
 ---
-title: IB HL Chemistry: Labs with Confidence
+title: "IB HL Chemistry: Labs with Confidence"
 summary: A checklist of pre-lab routines, data booklet hacks and reflection prompts that simplify Internal Assessments.
 tags:
   - IB
