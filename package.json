@@ -10,6 +10,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@upstash/vector": "^1.2.2",
     "clsx": "^1.2.1",
     "decap-cms": "^3.9.0",
     "gray-matter": "^4.0.3",

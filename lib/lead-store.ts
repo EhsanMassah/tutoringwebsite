@@ -1,5 +1,6 @@
 import fs from 'fs/promises'
 import path from 'path'
+import { Index } from '@upstash/vector'
 import { ContactInput } from './validation'
 
 export type StoredLead = Omit<ContactInput, 'hp'> & {
@@ -13,6 +14,54 @@ const MAX_LEADS = 1000
 
 const KV_REST_API_URL = process.env.KV_REST_API_URL || process.env.VERCEL_KV_REST_API_URL
 const KV_REST_API_TOKEN = process.env.KV_REST_API_TOKEN || process.env.VERCEL_KV_REST_API_TOKEN
+
+const UPSTASH_VECTOR_URL = process.env.UPSTASH_VECTOR_REST_URL
+const UPSTASH_VECTOR_TOKEN = process.env.UPSTASH_VECTOR_REST_TOKEN
+const UPSTASH_VECTOR_NAMESPACE = process.env.UPSTASH_VECTOR_NAMESPACE
+
+let vectorIndex: Index<Record<string, unknown>> | null = null
+
+function getVectorIndex() {
+  if (!UPSTASH_VECTOR_URL || !UPSTASH_VECTOR_TOKEN) return null
+  if (!vectorIndex) {
+    vectorIndex = new Index({ url: UPSTASH_VECTOR_URL, token: UPSTASH_VECTOR_TOKEN })
+  }
+  return vectorIndex
+}
+
+async function saveLeadToUpstashVector(lead: StoredLead) {
+  const index = getVectorIndex()
+  if (!index) return false
+
+  const idSource = `${lead.email || 'lead'}-${lead.submittedAt}`
+  const id = idSource.replace(/[^a-zA-Z0-9-_:.]/g, '_')
+
+  try {
+    await index.upsert(
+      [
+        {
+          id,
+          data: JSON.stringify(lead),
+          metadata: {
+            name: lead.name,
+            email: lead.email,
+            level: lead.level,
+            subjects: lead.subjects || null,
+            goals: lead.goals || null,
+            phone: lead.phone || null,
+            ip: lead.ip,
+            submittedAt: lead.submittedAt
+          }
+        }
+      ],
+      UPSTASH_VECTOR_NAMESPACE ? { namespace: UPSTASH_VECTOR_NAMESPACE } : undefined
+    )
+    return true
+  } catch (error) {
+    console.error('Failed to persist lead to Upstash Vector', error)
+    return false
+  }
+}
 
 async function saveLeadToKV(lead: StoredLead) {
   if (!KV_REST_API_URL || !KV_REST_API_TOKEN) return false
@@ -43,6 +92,7 @@ async function saveLeadToKV(lead: StoredLead) {
 }
 
 export async function saveLead(lead: StoredLead) {
+  if (await saveLeadToUpstashVector(lead)) return
   if (await saveLeadToKV(lead)) return
 
   const { dir } = path.parse(leadsFile)

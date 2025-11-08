@@ -23,7 +23,8 @@ Environment variables
 - AUTOREPLY_SUBJECT (optional) — custom subject line for the client acknowledgement email
 - AUTOREPLY_BODY (optional) — plain-text body for the client acknowledgement email
 - AUTOREPLY_DISABLED (optional) — set to `true` to skip autoresponder even when SMTP is configured
-- KV_REST_API_URL / KV_REST_API_TOKEN (or the Vercel-provided `VERCEL_KV_*` vars) — optional Vercel KV connection for persisting leads; falls back to `data/leads.json` locally
+- UPSTASH_VECTOR_REST_URL / UPSTASH_VECTOR_REST_TOKEN — optional Upstash Vector store for leads (takes priority when set); you can also set `UPSTASH_VECTOR_NAMESPACE` to isolate data per environment
+- KV_REST_API_URL / KV_REST_API_TOKEN (or the Vercel-provided `VERCEL_KV_*` vars) — optional Vercel KV connection for persisting leads if Upstash Vector is unavailable; falls back to `data/leads.json` locally
 - Copy `.env.example` to `.env.local` and fill in the values above before running `npm run dev` if you want to test the full email flow locally.
 
 Files of interest
