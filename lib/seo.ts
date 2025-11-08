@@ -1,10 +1,12 @@
+import type { Metadata } from 'next'
+
 type SiteMetadataInput = {
   title: string
   description: string
   keywords?: string[]
 }
 
-export function generateSiteMetadata({ title, description, keywords }: SiteMetadataInput) {
+export function generateSiteMetadata({ title, description, keywords }: SiteMetadataInput): Metadata {
   return {
     title,
     description,
@@ -15,7 +17,11 @@ export function generateSiteMetadata({ title, description, keywords }: SiteMetad
       description,
       type: 'website'
     },
-    twitter: { card: 'summary_large_image' }
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description
+    }
   }
 }
 

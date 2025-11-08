@@ -1,11 +1,10 @@
 import React from 'react'
 import '../../styles/globals.css'
-import { Metadata } from 'next'
 import { generateSiteMetadata, organizationJsonLD, localBusinessJsonLD } from '../../lib/seo'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
-export const metadata: Metadata = generateSiteMetadata({
+export const metadata = generateSiteMetadata({
   title: 'Ehsan Massah | Chelsea & Kensington Maths and Science Tutor',
   description: 'One-to-one Maths, Further Maths, Physics and Chemistry tutoring led personally by Ehsan Massah for 11+, GCSE, IGCSE, IB and A-level students in Chelsea, Kensington and online.',
   keywords: [
