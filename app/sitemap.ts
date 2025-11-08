@@ -1,25 +1,15 @@
-import { NextResponse } from 'next/server'
+import type { MetadataRoute } from 'next'
 
-export async function GET() {
-  const baseUrl = process.env.SITE_URL || 'https://example.com'
+const ROUTES = ['/', '/about', '/subjects', '/pricing', '/contact', '/blog'] as const
 
-  const routes = [
-    '/',
-    '/about',
-    '/subjects',
-    '/pricing',
-    '/contact',
-    '/blog'
-  ]
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = process.env.SITE_URL || 'https://massah-inst.com'
+  const lastModified = new Date()
 
-  const urls = routes.map((r) => `
-    <url>
-      <loc>${baseUrl}${r}</loc>
-      <changefreq>weekly</changefreq>
-    </url>`).join('')
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`
-
-  return new NextResponse(xml, { status: 200, headers: { 'Content-Type': 'application/xml' } })
+  return ROUTES.map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: path === '/' ? 1 : 0.7,
+  }))
 }

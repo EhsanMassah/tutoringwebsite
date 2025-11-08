@@ -37,6 +37,7 @@ export async function POST(req: Request) {
     ipMap.set(ip, entry)
 
     const { hp, ...lead } = parsed.data
+    void hp // honeypot already validated above; omit from persisted payload
     const leadRecord = {
       ...lead,
       submittedAt: new Date().toISOString(),
