@@ -23,6 +23,7 @@ Environment variables
 - AUTOREPLY_SUBJECT (optional) — custom subject line for the client acknowledgement email
 - AUTOREPLY_BODY (optional) — plain-text body for the client acknowledgement email
 - AUTOREPLY_DISABLED (optional) — set to `true` to skip autoresponder even when SMTP is configured
+- KV_REST_API_URL / KV_REST_API_TOKEN (or the Vercel-provided `VERCEL_KV_*` vars) — optional Vercel KV connection for persisting leads; falls back to `data/leads.json` locally
 - Copy `.env.example` to `.env.local` and fill in the values above before running `npm run dev` if you want to test the full email flow locally.
 
 Files of interest
@@ -32,7 +33,7 @@ Files of interest
 - `components/` — reusable UI pieces
 - `lib/validation.ts` — zod schemas for forms
 - `data/subjects.ts` — seed subjects
-- `data/leads.json` — generated at runtime; stores the most recent lead submissions (gitignored)
+- `data/leads.json` — generated at runtime; local fallback store for recent lead submissions when Vercel KV is unavailable (gitignored)
 
 # Managing content
 
