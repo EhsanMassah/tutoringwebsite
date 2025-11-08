@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api
+
+Sitemap: ${process.env.SITE_URL || 'https://example.com'}/sitemap.xml
