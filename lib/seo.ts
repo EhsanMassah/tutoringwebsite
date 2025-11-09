@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SITE_URL, metadataBase } from './site'
 
 type SiteMetadataInput = {
   title: string
@@ -11,7 +12,7 @@ export function generateSiteMetadata({ title, description, keywords }: SiteMetad
     title,
     description,
     keywords,
-    metadataBase: process.env.SITE_URL ? new URL(process.env.SITE_URL) : undefined,
+    metadataBase,
     openGraph: {
       title,
       description,
@@ -30,18 +31,17 @@ export function organizationJsonLD() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Ehsan Massah Tutoring',
-    url: process.env.SITE_URL || 'https://example.com',
-    logo: `${process.env.SITE_URL || 'https://example.com'}/logo.png`,
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
   }
 }
 
 export function localBusinessJsonLD() {
-  const site = process.env.SITE_URL || 'https://massah-inst.com'
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Ehsan Massah Tutoring',
-    url: site,
+    url: SITE_URL,
     telephone: '+447957933537',
     email: 'ehsan@massah-inst.com',
     priceRange: '£££',

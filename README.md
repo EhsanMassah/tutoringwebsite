@@ -18,6 +18,7 @@ npm run dev
 
 Environment variables
 
+- SITE_URL — canonical production domain (e.g. `https://cftutoring.com`) used for SEO metadata, canonical tags, sitemap and robots.txt.
 - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS — for Nodemailer (optional)
 - ADMIN_EMAIL — email to receive lead notifications
 - AUTOREPLY_SUBJECT (optional) — custom subject line for the client acknowledgement email
