@@ -31,7 +31,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         {/* Favicons / preconnects for performance */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         {/* JSON-LD structured data */}
