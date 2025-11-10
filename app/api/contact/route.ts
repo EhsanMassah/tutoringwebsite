@@ -37,9 +37,13 @@ export async function POST(req: Request) {
     ipMap.set(ip, entry)
 
     const { hp, ...lead } = parsed.data
+    const normalizedLead: ContactInput = {
+      ...lead,
+      name: titleCase(lead.name || ''),
+    }
     void hp // honeypot already validated above; omit from persisted payload
     const leadRecord = {
-      ...lead,
+      ...normalizedLead,
       submittedAt: new Date().toISOString(),
       ip,
       userAgent: req.headers.get('user-agent')
@@ -70,7 +74,7 @@ export async function POST(req: Request) {
       const info = await transporter.sendMail({
         from: process.env.SMTP_FROM || ADMIN_EMAIL,
         to: ADMIN_EMAIL,
-        subject: `New tutoring enquiry from ${lead.name}`,
+        subject: `New tutoring enquiry from ${normalizedLead.name}`,
         text: `New lead:\n${JSON.stringify(leadRecord, null, 2)}`,
       })
       console.log('Lead email sent', info.messageId)
@@ -80,10 +84,10 @@ export async function POST(req: Request) {
 
     const autoresponderEnabled = transporter && process.env.AUTOREPLY_DISABLED !== 'true'
     if (autoresponderEnabled && transporter) {
-      const subject = process.env.AUTOREPLY_SUBJECT || 'Your enquiry with Ehsan Massah Tutoring'
+      const subject = process.env.AUTOREPLY_SUBJECT || 'Your private tutoring briefing'
       const bodyText =
         process.env.AUTOREPLY_BODY ||
-        `Hi ${lead.name},
+        `Hi ${normalizedLead.name},
 
 Thank you for your message — I’ll reply within one business day with a bespoke lesson plan and consultation times. For anything urgent you can reach me on +44 7957 933537.
 
@@ -92,10 +96,10 @@ Ehsan Massah`
 
       await transporter.sendMail({
         from: process.env.SMTP_FROM || ADMIN_EMAIL || 'no-reply@massah-inst.com',
-        to: lead.email,
+        to: normalizedLead.email,
         subject,
         text: bodyText,
-        html: buildAutoReplyHtml(lead),
+        html: buildAutoReplyHtml(normalizedLead),
       })
     }
 
@@ -118,7 +122,7 @@ function buildAutoReplyHtml(lead: ContactInput) {
   const slate400 = '#94a3b8'
   const highlight = '#fef3c7'
 
-  const firstName = lead.name?.split(' ')[0] || 'there'
+  const firstName = lead.name?.split(' ')[0] || 'There'
 
   return `<!DOCTYPE html>
   <html lang="en">
@@ -195,4 +199,13 @@ function buildAutoReplyHtml(lead: ContactInput) {
       </div>
     </body>
   </html>`
+}
+
+function titleCase(value: string) {
+  return value
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => word[0]?.toUpperCase() + word.slice(1))
+    .join(' ')
 }
