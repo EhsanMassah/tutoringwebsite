@@ -1,28 +1,46 @@
 import type { Metadata } from 'next'
 import { SITE_URL, metadataBase } from './site'
 
+const BASE_KEYWORDS = [
+  'Chelsea maths tutor',
+  'Kensington maths tutor',
+ 'Fulham maths tutor',
+  'Chelsea science tutor',
+  'Kensington physics tutor',
+  '11+ tutor West London',
+  'A-level maths tutor London',
+]
+
 type SiteMetadataInput = {
   title: string
   description: string
   keywords?: string[]
+  pathname?: string
 }
 
-export function generateSiteMetadata({ title, description, keywords }: SiteMetadataInput): Metadata {
+export function generateSiteMetadata({ title, description, keywords = [], pathname }: SiteMetadataInput): Metadata {
+  const canonical = buildCanonicalUrl(pathname)
+  const mergedKeywords = Array.from(new Set([...BASE_KEYWORDS, ...keywords].filter(Boolean)))
+
   return {
     title,
     description,
-    keywords,
+    keywords: mergedKeywords,
     metadataBase,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title,
       description,
-      type: 'website'
+      url: canonical,
+      type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description
-    }
+      description,
+    },
   }
 }
 
@@ -55,5 +73,16 @@ export function localBusinessJsonLD() {
     serviceArea: [
       'Chelsea', 'Sloane Square', 'South Kensington', 'Kensington High Street', 'Holland Park', "Queen's Gate"
     ]
+  }
+}
+
+function buildCanonicalUrl(pathname?: string) {
+  if (!pathname) return SITE_URL
+
+  try {
+    return new URL(pathname, SITE_URL).toString()
+  } catch {
+    const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`
+    return `${SITE_URL}${normalized}`
   }
 }

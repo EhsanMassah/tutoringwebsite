@@ -1,6 +1,15 @@
 import React from 'react'
 import ResourceExplorer from '../../../components/ResourceExplorer'
 import { getResources } from '../../../lib/resources'
+import { generateSiteMetadata } from '../../../lib/seo'
+
+export const metadata = generateSiteMetadata({
+  title: 'Chelsea Maths & Science Revision Guides | CF Tutoring Resources',
+  description:
+    'Browse articles, study planners and calm exam preparation advice curated for Chelsea, Fulham and Kensington students across Maths and Science.',
+  keywords: ['chelsea revision guide', 'kensington study tips', 'fulham exam preparation', 'london maths resources'],
+  pathname: '/blog',
+})
 
 export default function ResourcesPage() {
   const resources = getResources()

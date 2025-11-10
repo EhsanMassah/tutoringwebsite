@@ -4,6 +4,15 @@ import SubjectGrid from '../../components/SubjectGrid'
 import TestimonialRotator from '../../components/TestimonialRotator'
 import CTASection from '../../components/CTASection'
 import FAQ from '../../components/FAQ'
+import { generateSiteMetadata } from '../../lib/seo'
+
+export const metadata = generateSiteMetadata({
+  title: 'Chelsea & Kensington Maths and Science Tutor | CF Tutoring',
+  description:
+    'Private Maths, Further Maths, Physics and Chemistry tutoring for Chelsea, Fulham and Kensington families with in-home or online lessons led by Ehsan Massah.',
+  keywords: ['Fulham maths tutor', 'Chelsea science tutor', 'Kensington physics tutor', 'Knightsbridge maths tutor', '11+ tutor Chelsea'],
+  pathname: '/',
+})
 
 const ACCENTS = [
   { label: '10+ yrs', caption: 'of specialised Maths & Science tutoring' },

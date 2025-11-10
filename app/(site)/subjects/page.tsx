@@ -1,5 +1,14 @@
 import React from 'react'
 import SubjectGrid from '../../../components/SubjectGrid'
+import { generateSiteMetadata } from '../../../lib/seo'
+
+export const metadata = generateSiteMetadata({
+  title: 'Maths, Further Maths & Science Tuition | Chelsea · Fulham · Kensington',
+  description:
+    'Explore the Maths, Further Maths, Physics and Chemistry programmes Ehsan delivers for Chelsea, Fulham and Kensington students across GCSE, IB and A-level.',
+  keywords: ['chelsea further maths tutor', 'fulham physics tutor', 'kensington chemistry tutor', 'ib maths tutor chelsea'],
+  pathname: '/subjects',
+})
 
 const APPROACH = [
   {

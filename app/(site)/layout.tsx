@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../styles/globals.css'
 import { generateSiteMetadata, organizationJsonLD, localBusinessJsonLD } from '../../lib/seo'
-import { SITE_URL } from '../../lib/site'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
@@ -19,7 +18,8 @@ export const metadata = generateSiteMetadata({
     'Ehsan Massah tutor',
     'PAT tutor London',
     'ESAT tutor London'
-  ]
+  ],
+  pathname: '/',
 })
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -33,7 +33,6 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="canonical" href={SITE_URL} />
         {/* JSON-LD structured data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(local) }} />

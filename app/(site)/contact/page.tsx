@@ -1,5 +1,14 @@
 import React from 'react'
 import LeadForm from '../../../components/LeadForm'
+import { generateSiteMetadata } from '../../../lib/seo'
+
+export const metadata = generateSiteMetadata({
+  title: 'Contact Chelsea Maths Tutor | Speak with Ehsan Massah',
+  description:
+    'Arrange a private consultation with Ehsan Massah to secure Maths, Further Maths and Science tutoring in Chelsea, Fulham, Kensington and Knightsbridge.',
+  keywords: ['chelsea maths tutor contact', 'kensington science tutor enquiry', 'fulham private tutor phone'],
+  pathname: '/contact',
+})
 
 export default function ContactPage() {
   return (

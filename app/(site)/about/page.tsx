@@ -1,4 +1,13 @@
 import React from 'react'
+import { generateSiteMetadata } from '../../../lib/seo'
+
+export const metadata = generateSiteMetadata({
+  title: 'About Ehsan Massah | Private Maths & Science Tutor in Chelsea',
+  description:
+    'Discover the credentials, safeguarding and tutoring approach that Ehsan Massah brings to Chelsea, Kensington and Knightsbridge families.',
+  keywords: ['private tutor chelsea profile', 'kensington science mentor', 'knightsbridge maths tutor experience'],
+  pathname: '/about',
+})
 
 const PILLARS = [
   { title: 'Measured teaching', detail: 'Evidence-led lessons that blend calm explanation with rigorous practice.' },
