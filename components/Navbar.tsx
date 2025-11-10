@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,9 +13,10 @@ const NAV_LINKS = [
 export default function Navbar() {
   return (
     <header className="border-b border-white/10 bg-slate-950 text-slate-100">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-6">
-        <Link href="/" className="text-lg font-semibold tracking-[0.35em] text-amber-300 uppercase">
-          Ehsan Massah
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="flex items-center">
+          <span className="sr-only">Ehsan Massah Tutoring</span>
+          <Image src="/images/Logos-3.svg" alt="Ehsan Massah Tutoring logo" width={1500} height={1500} priority className="h-40 w-auto -my-6" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((item) => (
