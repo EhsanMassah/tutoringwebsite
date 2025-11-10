@@ -41,6 +41,27 @@ const PROCESS = [
   { title: 'Guide', detail: 'Quiet, focused tuition with measured feedback after every session.' }
 ]
 
+const LOCAL_AREAS = [
+  {
+    name: 'Chelsea',
+    blurb:
+      'In-home GCSE and A-level intensives near Sloane Square, King’s Road and Cheyne Walk with seamless coordination around school commitments.',
+    extras: ['Parking arranged on request', 'King’s College & Westminster feeder familiarity', 'Evening slots for busy families']
+  },
+  {
+    name: 'Kensington & South Kensington',
+    blurb:
+      'Structured STEM mentoring for Imperial prep, Lycée Français and top independents, delivered between Gloucester Road, High Street Ken and Holland Park.',
+    extras: ['Aptitude prep for MAT, PAT, ENGAA', 'IB HL Chemistry labs support', 'Museum District study meet-ups available']
+  },
+  {
+    name: 'Fulham & Parsons Green',
+    blurb:
+      'Calm tuition for Emanuel, Latymer Upper and Godolphin cohorts, with hybrid online/in-person plans when travel across the river is tight.',
+    extras: ['Weekend morning availability', 'Whatsapp progress loops with parents', '11+ reasoning workshops in-school holidays']
+  }
+]
+
 export default function Home() {
   return (
     <div className="bg-slate-950 text-slate-100">
@@ -88,6 +109,35 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.3em] text-amber-200/70">Exam boards AQA · Edexcel · OCR · CIE · IB</p>
           </div>
           <SubjectGrid />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="space-y-8">
+          <div className="max-w-3xl space-y-3">
+            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Local focus</p>
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Chelsea, Kensington & Fulham expertise</h2>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Every neighbourhood has its own school ecosystem, exam boards and scheduling quirks. I maintain routes, safeguarding checks and resources
+              specifically for SW1–SW7 so lessons remain efficient and discreet.
+            </p>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {LOCAL_AREAS.map((area) => (
+              <article key={area.name} className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-lg backdrop-blur">
+                <div className="text-xs uppercase tracking-[0.35em] text-amber-200/80">{area.name}</div>
+                <p className="mt-3 flex-1 text-sm text-slate-200 leading-relaxed">{area.blurb}</p>
+                <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                  {area.extras.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

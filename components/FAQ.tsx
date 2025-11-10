@@ -1,10 +1,30 @@
 import React from 'react'
 
 const FAQ_DATA = [
-  { q: 'Which levels do you cover?', a: '11+, GCSE, IGCSE, IB and A-level in Maths, Further Maths, Physics and Chemistry.' },
-  { q: 'Where do lessons take place?', a: 'In-person across Chelsea, Kensington and Knightsbridge, with online options for travel weeks.' },
-  { q: 'Will I receive feedback?', a: 'Yes — concise session notes and next steps arrive within 24 hours.' },
-  { q: 'Are safeguarding checks in place?', a: 'Enhanced DBS, safeguarding training and professional insurance are all current.' }
+  {
+    q: 'Which levels do you cover?',
+    a: '11+, GCSE, IGCSE, IB and A-level in Maths, Further Maths, Physics and Chemistry.'
+  },
+  {
+    q: 'Do you travel to Fulham, Parsons Green and South Kensington?',
+    a: 'Yes — Chelsea, Fulham, Kensington, Knightsbridge and Holland Park are part of my weekly schedule, with travel baked into the fee.'
+  },
+  {
+    q: 'How do you handle parking or concierge access in Chelsea homes?',
+    a: 'I coordinate visitor permits/concierge sign-in ahead of the first lesson so arrivals remain discreet and on time.'
+  },
+  {
+    q: 'Will I receive feedback?',
+    a: 'Concise session notes with next steps arrive within 24 hours, plus WhatsApp check-ins for urgent updates.'
+  },
+  {
+    q: 'Can we blend online lessons during travel weeks or boarding school terms?',
+    a: 'Absolutely — I flip to a shared whiteboard setup with recorded walkthroughs so progress continues while abroad or at boarding school.'
+  },
+  {
+    q: 'Are safeguarding checks in place?',
+    a: 'Enhanced DBS, safeguarding training and professional insurance are all current and renewed annually.'
+  }
 ]
 
 export default function FAQ() {

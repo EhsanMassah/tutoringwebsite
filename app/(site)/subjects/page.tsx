@@ -25,6 +25,12 @@ const APPROACH = [
   }
 ]
 
+const AREA_LINKS = [
+  { label: 'Chelsea Maths Tutor', href: '/contact#chelsea' },
+  { label: 'Kensington Science Tutor', href: '/contact#kensington' },
+  { label: 'Fulham Physics Tutor', href: '/contact#fulham' },
+]
+
 export default function SubjectsPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 lg:py-20 space-y-14">
@@ -33,7 +39,19 @@ export default function SubjectsPage() {
         <h1 className="text-4xl font-semibold text-white sm:text-5xl">Subjects tutored</h1>
         <p className="text-sm text-slate-300 leading-relaxed">
           From selective school entrance to A-level Further Maths, every programme is curated and taught by me with meticulous resources and calm coaching.
+          I teach in-home across Chelsea, Kensington, South Kensington, Fulham and Knightsbridge, tailoring resources to each borough’s preferred exam boards and school calendars.
         </p>
+        <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.25em]">
+          {AREA_LINKS.map((area) => (
+            <a
+              key={area.label}
+              href={area.href}
+              className="rounded-full border border-white/15 px-4 py-2 text-amber-200/80 hover:border-amber-200 hover:text-slate-950 hover:bg-amber-200/80 transition"
+            >
+              {area.label}
+            </a>
+          ))}
+        </div>
       </header>
 
       <section>

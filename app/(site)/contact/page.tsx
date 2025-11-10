@@ -10,17 +10,39 @@ export const metadata = generateSiteMetadata({
   pathname: '/contact',
 })
 
+const LOCATION_BLURBS = [
+  {
+    id: 'chelsea',
+    title: 'Chelsea & Sloane Square',
+    copy:
+      'Weekday afternoon and early evening lessons near King’s Road, Cheyne Walk and Sloane Square with permit parking coordination handled for you.',
+  },
+  {
+    id: 'kensington',
+    title: 'Kensington & South Kensington',
+    copy:
+      'Museum District, Gloucester Road and Holland Park families lean on my IB, MAT and PAT prep — concierge access details can be stored securely after our first visit.',
+  },
+  {
+    id: 'fulham',
+    title: 'Fulham & Parsons Green',
+    copy:
+      'Morning and weekend slots for Latymer Upper, Godolphin & Latymer and Emanuel students, with flexible online switches when fixtures or travel clash.',
+  },
+]
+
 export default function ContactPage() {
   return (
-    <div className="mx-auto grid max-w-5xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
-      <div className="space-y-6">
-        <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Enquiries</p>
-        <h1 className="text-4xl font-semibold text-white sm:text-5xl">Speak with Ehsan Massah</h1>
-        <p className="text-sm text-slate-300 leading-relaxed">
-          Outline your child’s objectives and timetable. I reply within one working day with proposed consultation times and next steps.
-          Fast-track support for upcoming exams can usually begin within 48 hours.
-        </p>
-        <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-lg backdrop-blur">
+    <div className="mx-auto space-y-10 px-6 py-16 lg:py-20">
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="space-y-6">
+          <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Enquiries</p>
+          <h1 className="text-4xl font-semibold text-white sm:text-5xl">Speak with Ehsan Massah</h1>
+          <p className="text-sm text-slate-300 leading-relaxed">
+            Outline your child’s objectives and timetable. I reply within one working day with proposed consultation times and next steps.
+            Fast-track support for upcoming exams can usually begin within 48 hours.
+          </p>
+        <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-lg backdrop-blur" id="chelsea">
           <h2 className="text-lg font-semibold text-white">Contact details</h2>
           <ul className="mt-4 space-y-3 text-sm text-slate-200">
             <li><span className="font-semibold text-amber-200/80">Phone:</span> <a href="tel:+447957933537" className="underline decoration-amber-200/60 hover:text-white">+44 7957 933537</a></li>
@@ -33,14 +55,28 @@ export default function ContactPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-amber-200/70">
           DBS cleared · Safeguarding trained · Fully insured
         </p>
-      </div>
-      <div className="rounded-[28px] border border-white/10 bg-white/[0.05] p-8 shadow-xl backdrop-blur">
-        <h2 className="text-xl font-semibold text-white">Request a private briefing with Ehsan</h2>
-        <p className="mt-2 text-sm text-slate-300">Complete the form — it takes less than a minute.</p>
-        <div className="mt-6">
-          <LeadForm />
+        </div>
+        <div className="rounded-[28px] border border-white/10 bg-white/[0.05] p-8 shadow-xl backdrop-blur">
+          <h2 className="text-xl font-semibold text-white">Request a private briefing with Ehsan</h2>
+          <p className="mt-2 text-sm text-slate-300">Complete the form — it takes less than a minute.</p>
+          <div className="mt-6">
+            <LeadForm />
+          </div>
         </div>
       </div>
+
+      <section className="grid gap-6 lg:grid-cols-3">
+        {LOCATION_BLURBS.map((area) => (
+          <article
+            key={area.id}
+            id={area.id}
+            className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 text-sm text-slate-200 leading-relaxed shadow-lg backdrop-blur"
+          >
+            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">{area.title}</p>
+            <p className="mt-3">{area.copy}</p>
+          </article>
+        ))}
+      </section>
     </div>
   )
 }
