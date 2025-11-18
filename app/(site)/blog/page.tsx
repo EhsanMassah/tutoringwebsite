@@ -6,8 +6,8 @@ import { generateSiteMetadata } from '../../../lib/seo'
 export const metadata = generateSiteMetadata({
   title: 'Chelsea Maths & Science Revision Guides | CF Tutoring Resources',
   description:
-    'Browse articles, study planners and calm exam preparation advice curated for Chelsea, Fulham and Kensington students across Maths and Science.',
-  keywords: ['chelsea revision guide', 'kensington study tips', 'fulham exam preparation', 'london maths resources'],
+    'Browse articles, study planners and calm exam preparation advice curated for Chelsea, Fulham and Kensington students — written specifically for parents overseeing 11+, GCSE, IB and A-level progress.',
+  keywords: ['chelsea revision guide', 'kensington study tips', 'fulham exam preparation', 'london maths resources', 'chelsea parent tutor guide', 'kensington parent revision plan'],
   pathname: '/blog',
 })
 

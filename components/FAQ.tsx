@@ -27,6 +27,23 @@ const FAQ_DATA = [
   }
 ]
 
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Parents in Chelsea, Kensington, Fulham and Knightsbridge',
+  },
+  mainEntity: FAQ_DATA.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+}
+
 export default function FAQ() {
   return (
     <div className="space-y-6">
@@ -43,6 +60,7 @@ export default function FAQ() {
           </details>
         ))}
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
     </div>
   )
 }

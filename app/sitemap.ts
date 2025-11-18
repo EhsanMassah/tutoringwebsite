@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '../lib/site'
 import { getPostsMeta } from '../lib/posts'
+import { getResources } from '../lib/resources'
 
 const STATIC_ROUTES: Array<{ path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
   { path: '/', priority: 1, changeFrequency: 'weekly' },
@@ -33,7 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  return [...staticEntries, ...articleEntries]
+  const resourceEntries = getResources().map((resource) => {
+    const parsedDate = resource.published ? new Date(resource.published) : generatedAt
+    const lastModified = Number.isNaN(parsedDate.getTime()) ? generatedAt : parsedDate
+
+    return {
+      url: `${SITE_URL}/blog/${resource.slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.55,
+    }
+  })
+
+  return [...staticEntries, ...articleEntries, ...resourceEntries]
 }
 
 function buildUrl(pathname: string) {

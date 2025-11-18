@@ -4,11 +4,14 @@ import { SITE_URL, metadataBase } from './site'
 const BASE_KEYWORDS = [
   'Chelsea maths tutor',
   'Kensington maths tutor',
- 'Fulham maths tutor',
+  'Fulham maths tutor',
   'Chelsea science tutor',
   'Kensington physics tutor',
   '11+ tutor West London',
   'A-level maths tutor London',
+  'Chelsea parents private tutor',
+  'Kensington parents home tutoring support',
+  'Fulham parents GCSE science help',
 ]
 
 type SiteMetadataInput = {
