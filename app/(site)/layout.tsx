@@ -25,6 +25,8 @@ export const metadata = generateSiteMetadata({
   pathname: '/',
 })
 
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-9X7192TW9T'
+
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   const org = organizationJsonLD()
   const local = localBusinessJsonLD()
@@ -36,21 +38,25 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-9X7J92TW9T" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('consent', 'default', {
-              ad_storage: 'denied',
-              analytics_storage: 'denied',
-              functionality_storage: 'granted',
-              security_storage: 'granted'
-            });
-            gtag('config', 'G-9X7J92TW9T');
-          `}
-        </Script>
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('consent', 'default', {
+                  ad_storage: 'denied',
+                  analytics_storage: 'denied',
+                  functionality_storage: 'granted',
+                  security_storage: 'granted'
+                });
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
         {/* JSON-LD structured data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(local) }} />
