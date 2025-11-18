@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { generateSiteMetadata, organizationJsonLD, localBusinessJsonLD } from '../../lib/seo'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import ConsentBanner from '../../components/ConsentBanner'
 
 export const metadata = generateSiteMetadata({
   title: 'Ehsan Massah | Chelsea & Kensington Maths and Science Tutor',
@@ -41,6 +42,12 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+              functionality_storage: 'granted',
+              security_storage: 'granted'
+            });
             gtag('config', 'G-9X7J92TW9T');
           `}
         </Script>
@@ -50,6 +57,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-slate-950 text-slate-100 antialiased">
         <Navbar />
+        <ConsentBanner />
         <main className="min-h-[70vh]">{children}</main>
         <Footer />
         <Analytics />
