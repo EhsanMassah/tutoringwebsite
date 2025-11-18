@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <div className="text-sm text-slate-300">
           <p>Phone <a className="hover:text-white" href="tel:+447957933537">+44 7957 933537</a></p>
-          <p>Email <a className="hover:text-white" href="mailto:ehsan@massah-inst.com">ehsan@massah-inst.com</a></p>
+          <p>Email <a className="hover:text-white" href="mailto:ehsan@cftutoring.com">ehsan@cftutoring.com</a></p>
           <p>WhatsApp <a className="hover:text-white" href="https://wa.me/447957933537">Message now</a></p>
         </div>
         <div className="text-sm text-slate-300">

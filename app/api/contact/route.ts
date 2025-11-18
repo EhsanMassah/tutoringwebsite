@@ -186,7 +186,7 @@ function buildAutoReplyHtml(lead: ContactInput) {
             </table>
 
             <div class="cta">
-              <a href="mailto:${process.env.ADMIN_EMAIL || 'ehsan@massah-inst.com'}?subject=Add%20details%20to%20my%20tutoring%20enquiry">Add further detail</a>
+              <a href="mailto:${process.env.ADMIN_EMAIL || 'ehsan@cftutoring.com'}?subject=Add%20details%20to%20my%20tutoring%20enquiry">Add further detail</a>
             </div>
 
             <p class="signature">— Ehsan</p>

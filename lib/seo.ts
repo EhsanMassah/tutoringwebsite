@@ -64,7 +64,7 @@ export function localBusinessJsonLD() {
     name: 'Ehsan Massah Tutoring',
     url: SITE_URL,
     telephone: '+447957933537',
-    email: 'ehsan@massah-inst.com',
+    email: 'ehsan@cftutoring.com',
     priceRange: '£££',
     address: {
       '@type': 'PostalAddress',
