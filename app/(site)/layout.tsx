@@ -1,4 +1,5 @@
 import React from 'react'
+import Script from 'next/script'
 import '../../styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { generateSiteMetadata, organizationJsonLD, localBusinessJsonLD } from '../../lib/seo'
@@ -34,6 +35,15 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-9X7J92TW9T" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9X7J92TW9T');
+          `}
+        </Script>
         {/* JSON-LD structured data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(local) }} />
