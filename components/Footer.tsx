@@ -22,6 +22,9 @@ export default function Footer() {
               Message now
             </a>
           </p>
+          <p>
+            <a className="hover:text-white" href="/privacy">Privacy Policy</a>
+          </p>
         </div>
         <div className="text-sm text-slate-300">
           <p>Chelsea · Kensington · Knightsbridge · Holland Park</p>
