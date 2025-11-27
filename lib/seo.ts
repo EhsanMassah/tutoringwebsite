@@ -62,7 +62,7 @@ export function organizationJsonLD() {
     '@type': 'Organization',
     name: 'Ehsan Massah Tutoring',
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
+    logo: `${SITE_URL}/favicon.svg`,
   }
 }
 
