@@ -19,13 +19,14 @@ type SiteMetadataInput = {
   description: string
   keywords?: string[]
   pathname?: string
+  image?: string
 }
 
-export function generateSiteMetadata({ title, description, keywords = [], pathname }: SiteMetadataInput): Metadata {
+export function generateSiteMetadata({ title, description, keywords = [], pathname, image }: SiteMetadataInput): Metadata {
   const canonical = buildCanonicalUrl(pathname)
   const mergedKeywords = Array.from(new Set([...BASE_KEYWORDS, ...keywords].filter(Boolean)))
 
-  const ogImage = `${SITE_URL}/favicon.png`
+  const ogImage = image || `${SITE_URL}/favicon.png`
 
   return {
     title,

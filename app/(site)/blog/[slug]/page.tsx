@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: entry.summary,
     keywords: [...entry.tags, ...entry.keywords, entry.audience, ...PARENT_KEYWORDS],
     pathname: `/blog/${entry.slug}`,
+    image: entry.image ? `${SITE_URL}${entry.image}` : undefined,
   })
 }
 

@@ -12,6 +12,7 @@ export type Resource = {
   published: string
   updated: string
   audience: string
+  image?: string
   body?: string
 }
 
@@ -50,6 +51,7 @@ export function getResources(options: GetResourcesOptions = {}): Resource[] {
         published,
         updated,
         audience: (data.audience as string) ?? DEFAULT_AUDIENCE,
+        image: (data.image as string) ?? undefined,
         body: includeBody ? content.trim() || undefined : undefined,
       }
     })

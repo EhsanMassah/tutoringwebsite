@@ -16,6 +16,7 @@ audience: Students preparing for Oxford or Cambridge undergraduate Physics/Maths
 readTime: 10 min read
 published: 2024-11-21
 updated: 2024-11-21
+image: /images/oxford-university.jpg
 ---
 
 ![Oxford University college skyline at dusk](/images/oxford-university.jpg)
