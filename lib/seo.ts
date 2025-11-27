@@ -38,11 +38,20 @@ export function generateSiteMetadata({ title, description, keywords = [], pathna
       description,
       url: canonical,
       type: 'website',
+      images: [
+        {
+          url: `${SITE_URL}/favicon.svg`,
+          width: 512,
+          height: 512,
+          alt: 'CF Tutoring'
+        }
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [`${SITE_URL}/favicon.svg`],
     },
   }
 }
