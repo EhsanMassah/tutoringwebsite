@@ -47,7 +47,15 @@ export default function ContactPage() {
           <ul className="mt-4 space-y-3 text-sm text-slate-200">
             <li><span className="font-semibold text-amber-200/80">Phone:</span> <a href="tel:+447957933537" className="underline decoration-amber-200/60 hover:text-white">+44 7957 933537</a></li>
             <li><span className="font-semibold text-amber-200/80">Email:</span> <a href="mailto:ehsan@cftutoring.com" className="underline decoration-amber-200/60 hover:text-white">ehsan@cftutoring.com</a></li>
-            <li><span className="font-semibold text-amber-200/80">WhatsApp:</span> <a href="https://wa.me/447957933537" className="underline decoration-amber-200/60 hover:text-white">Message instantly</a></li>
+            <li>
+              <span className="font-semibold text-amber-200/80">WhatsApp:</span>{' '}
+              <a
+                href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
+                className="underline decoration-amber-200/60 hover:text-white"
+              >
+                Message instantly
+              </a>
+            </li>
             <li><span className="font-semibold text-amber-200/80">Hours:</span> Monday–Sunday, 8am–9pm (UK)</li>
             <li><span className="font-semibold text-amber-200/80">Locations:</span> Chelsea, Kensington, Knightsbridge, Holland Park & online worldwide</li>
           </ul>

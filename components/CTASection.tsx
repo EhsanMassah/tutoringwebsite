@@ -16,7 +16,7 @@ export default function CTASection() {
             Arrange a consultation
           </a>
           <a
-            href="https://wa.me/447957933537"
+            href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
             className="inline-flex items-center justify-center rounded-full border border-amber-200/60 px-8 py-3 text-sm font-semibold text-amber-200 transition hover:-translate-y-1 hover:text-white"
           >
             Message on WhatsApp

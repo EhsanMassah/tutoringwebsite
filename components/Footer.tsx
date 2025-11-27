@@ -13,7 +13,15 @@ export default function Footer() {
         <div className="text-sm text-slate-300">
           <p>Phone <a className="hover:text-white" href="tel:+447957933537">+44 7957 933537</a></p>
           <p>Email <a className="hover:text-white" href="mailto:ehsan@cftutoring.com">ehsan@cftutoring.com</a></p>
-          <p>WhatsApp <a className="hover:text-white" href="https://wa.me/447957933537">Message now</a></p>
+          <p>
+            WhatsApp{' '}
+            <a
+              className="hover:text-white"
+              href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
+            >
+              Message now
+            </a>
+          </p>
         </div>
         <div className="text-sm text-slate-300">
           <p>Chelsea · Kensington · Knightsbridge · Holland Park</p>

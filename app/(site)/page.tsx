@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import Hero from '../../components/Hero'
 import SubjectGrid from '../../components/SubjectGrid'
@@ -9,13 +10,20 @@ import { generateSiteMetadata } from '../../lib/seo'
 export const metadata = generateSiteMetadata({
   title: 'Chelsea & Kensington Maths and Science Tutor | CF Tutoring',
   description:
-    'Private Maths, Further Maths, Physics and Chemistry tutoring for Chelsea, Fulham and Kensington families with in-home or online lessons led by Ehsan Massah.',
-  keywords: ['Fulham maths tutor', 'Chelsea science tutor', 'Kensington physics tutor', 'Knightsbridge maths tutor', '11+ tutor Chelsea'],
+    'Premium GCSE, IGCSE, IB and A-level Maths, Further Maths, Physics and Chemistry tutoring for Chelsea, Fulham and Kensington families with in-home or online lessons led directly by Ehsan Massah.',
+  keywords: [
+    'Fulham maths tutor',
+    'Chelsea science tutor',
+    'Kensington physics tutor',
+    'Knightsbridge maths tutor',
+    '11+ tutor Chelsea',
+    'maths tutor Kensington and Chelsea'
+  ],
   pathname: '/',
 })
 
 const ACCENTS = [
-  { label: '10+ yrs', caption: 'of specialised Maths & Science tutoring' },
+  { label: '15+ yrs', caption: 'of specialised Maths & Science tutoring' },
   { label: '92%', caption: 'achieve or exceed target grades' },
   { label: '24h', caption: 'personal response time for new enquiries' }
 ]
@@ -49,7 +57,7 @@ const LOCAL_AREAS = [
     extras: ['Parking arranged on request', 'King’s College & Westminster feeder familiarity', 'Evening slots for busy families']
   },
   {
-    name: 'Kensington & South Kensington',
+    name: 'Kensington',
     blurb:
       'Structured STEM mentoring for Imperial prep, Lycée Français and top independents, delivered between Gloucester Road, High Street Ken and Holland Park.',
     extras: ['Aptitude prep for MAT, PAT, ENGAA', 'IB HL Chemistry labs support', 'Museum District study meet-ups available']
@@ -116,7 +124,7 @@ export default function Home() {
         <div className="space-y-8">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Local focus</p>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Chelsea, Kensington & Fulham expertise</h2>
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Chelsea, Kensington & Fulham</h2>
             <p className="text-sm text-slate-300 leading-relaxed">
               Every neighbourhood has its own school ecosystem, exam boards and scheduling quirks. I maintain routes, safeguarding checks and resources
               specifically for SW1–SW7 so lessons remain efficient and discreet.

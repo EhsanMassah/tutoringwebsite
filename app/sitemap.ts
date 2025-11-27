@@ -10,6 +10,7 @@ const STATIC_ROUTES: Array<{ path: string; priority: number; changeFrequency: Me
   { path: '/pricing', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/contact', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/blog', priority: 0.65, changeFrequency: 'weekly' },
+  { path: '/maths-and-science-tutors-kensington-chelsea', priority: 0.85, changeFrequency: 'monthly' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

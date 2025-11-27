@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { generateSiteMetadata } from '../../../lib/seo'
 
@@ -17,7 +18,7 @@ const PILLARS = [
 
 const CREDENTIALS = [
   'STEM degree specialising in advanced mathematics and engineering principles',
-  'Over 10 years and 3,000+ hours of one-to-one tutoring',
+  'Over 15 years and 3,000+ hours of one-to-one tutoring',
   'Enhanced DBS, safeguarding and first aid certified',
   'Member of The Tutors’ Association (Associate)'
 ]
@@ -53,6 +54,13 @@ export default function About() {
         <p className="text-sm text-slate-300 leading-relaxed">
           Lessons can be in-home or online, scheduled to fit demanding timetables. Exam board mastery, handwritten solution walk-throughs and
           diagnostic trackers ensure progress is visible and measurable.
+        </p>
+        <p className="text-sm text-slate-300 leading-relaxed">
+          For families in SW1–SW7 who want a deep dive into travel, availability and exam-board alignment, see the{' '}
+          <Link href="/maths-and-science-tutors-kensington-chelsea" className="font-semibold text-amber-200 hover:text-white">
+            Kensington & Chelsea tutoring page
+          </Link>
+          .
         </p>
       </section>
 

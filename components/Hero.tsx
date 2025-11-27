@@ -12,14 +12,14 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-start gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-300/80">
-            Chelsea · Kensington · Knightsbridge
+            Premium GCSE · IGCSE · A-level Maths & Science | Kensington & Chelsea
           </span>
           <h1 className="mt-6 text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">
-            Ehsan Massah
+            Maths & Science Tutoring
           </h1>
-          <p className="mt-2 text-sm uppercase tracking-[0.3em] text-amber-200/80">Private Maths & Science Tutor</p>
+          <p className="mt-2 text-sm uppercase tracking-[0.3em] text-amber-200/80">Chelsea · Kensington · Knightsbridge · Online</p>
           <p className="mt-4 max-w-xl text-lg text-slate-200 sm:text-xl">
-            Over 10 years guiding students through GCSE, A-level, IB and elite entrance exams with calm, expert precision.
+            Over 15 years guiding students through GCSE, A-level, IB and elite entrance exams with calm, expert precision across SW London.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
@@ -30,14 +30,14 @@ export default function Hero() {
             </a>
             <a
               className="inline-flex items-center justify-center rounded-full border border-amber-200/40 px-7 py-3 text-sm font-semibold text-amber-200 transition hover:-translate-y-1 hover:border-amber-200 hover:text-white"
-              href="https://wa.me/447957933537"
+              href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
             >
               WhatsApp +44 7957 933537
             </a>
           </div>
           <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-300 sm:text-base">
             <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-amber-300" /> 10+ years of private tutoring
+              <span className="h-2 w-2 rounded-full bg-amber-300" /> 15+ years of private tutoring
             </span>
             <span className="inline-flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-amber-300" /> 92% target grade success
