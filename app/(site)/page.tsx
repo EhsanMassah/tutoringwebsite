@@ -7,7 +7,7 @@ import FAQ from '../../components/FAQ'
 import { generateSiteMetadata } from '../../lib/seo'
 
 export const metadata = generateSiteMetadata({
-  title: 'Chelsea & Kensington Maths and Science Tutor | CF Tutoring',
+  title: 'Chelsea & Fulham Maths and Science Tutor | CF Tutoring',
   description:
     'Premium GCSE, IGCSE, IB and A-level Maths, Further Maths, Physics and Chemistry tutoring for Chelsea, Fulham and Kensington families with in-home or online lessons led directly by Ehsan Massah.',
   keywords: [
