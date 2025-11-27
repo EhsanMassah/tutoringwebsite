@@ -18,6 +18,8 @@ published: 2024-11-21
 updated: 2024-11-21
 ---
 
+![Oxford University college skyline at dusk](/images/oxford-university.jpg)
+
 ## What interviewers are checking
 
 - **How you think out loud:** They want your reasoning pathway, not just the final answer.
