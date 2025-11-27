@@ -25,6 +25,8 @@ export function generateSiteMetadata({ title, description, keywords = [], pathna
   const canonical = buildCanonicalUrl(pathname)
   const mergedKeywords = Array.from(new Set([...BASE_KEYWORDS, ...keywords].filter(Boolean)))
 
+  const ogImage = `${SITE_URL}/favicon.png`
+
   return {
     title,
     description,
@@ -40,7 +42,7 @@ export function generateSiteMetadata({ title, description, keywords = [], pathna
       type: 'website',
       images: [
         {
-          url: `${SITE_URL}/favicon.svg`,
+          url: ogImage,
           width: 512,
           height: 512,
           alt: 'CF Tutoring'
@@ -51,7 +53,7 @@ export function generateSiteMetadata({ title, description, keywords = [], pathna
       card: 'summary_large_image',
       title,
       description,
-      images: [`${SITE_URL}/favicon.svg`],
+      images: [ogImage],
     },
   }
 }
@@ -62,7 +64,7 @@ export function organizationJsonLD() {
     '@type': 'Organization',
     name: 'Ehsan Massah Tutoring',
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.svg`,
+    logo: `${SITE_URL}/favicon.png`,
   }
 }
 
