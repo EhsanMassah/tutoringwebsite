@@ -6,8 +6,11 @@ describe('ContactSchema', () => {
     const valid = {
       name: 'Jane Doe',
       email: 'jane@example.com',
-      level: 'GCSE',
-      consent: true,
+      studentYear: 'Year 12 (AS)',
+      subjects: 'A-Level Maths',
+      target: 'A*',
+      location: 'Online',
+      packageConsent: true,
       hp: ''
     }
     const parsed = ContactSchema.safeParse(valid)
@@ -15,7 +18,7 @@ describe('ContactSchema', () => {
   })
 
   it('rejects missing consent', () => {
-    const invalid = { name: 'x', email: 'bad', level: '', consent: false, hp: '' }
+    const invalid = { name: 'x', email: 'bad', studentYear: '', subjects: '', target: '', location: '', packageConsent: false, hp: '' }
     const parsed = ContactSchema.safeParse(invalid)
     expect(parsed.success).toBe(false)
   })

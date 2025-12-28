@@ -6,10 +6,11 @@ import { generateSiteMetadata, organizationJsonLD, localBusinessJsonLD } from '.
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import ConsentBanner from '../../components/ConsentBanner'
+import StickyCTA from '../../components/StickyCTA'
 
 export const metadata = generateSiteMetadata({
-  title: 'Ehsan Massah | Chelsea & Kensington Maths and Science Tutor',
-  description: 'One-to-one Maths, Further Maths, Physics and Chemistry tutoring led personally by Ehsan Massah for 11+, GCSE, IGCSE, IB and A-level students in Chelsea, Kensington and online.',
+  title: 'Ehsan Massah | Physics & Maths Tutor in London',
+  description: 'Outcome-focused Physics and Maths tutoring (GCSE, A-Level, Further Maths, Oxbridge/Imperial prep) delivered personally by Ehsan Massah.',
   keywords: [
     'Chelsea maths tutor',
     'Kensington maths tutor',
@@ -20,7 +21,8 @@ export const metadata = generateSiteMetadata({
     '11 plus tutor South West London',
     'Ehsan Massah tutor',
     'PAT tutor London',
-    'ESAT tutor London'
+    'ESAT tutor London',
+    'Oxbridge interview tutor London'
   ],
   pathname: '/',
 })
@@ -65,6 +67,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <ConsentBanner />
         <main className="min-h-[70vh]">{children}</main>
+        <StickyCTA />
         <Footer />
         <Analytics />
       </body>

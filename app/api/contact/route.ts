@@ -89,7 +89,7 @@ export async function POST(req: Request) {
         process.env.AUTOREPLY_BODY ||
         `Hi ${normalizedLead.name},
 
-Thank you for your message — I’ll reply within one business day with a bespoke lesson plan and consultation times. For anything urgent you can reach me on +44 7957 933537.
+Thank you for your message — I’ll reply within one business day with a bespoke lesson plan, recommended package and consultation times. For anything urgent you can reach me on +44 7957 933537.
 
 Best wishes,
 Ehsan Massah`
@@ -160,22 +160,12 @@ function buildAutoReplyHtml(lead: ContactInput) {
             <div class="divider"></div>
             <table class="details-table">
               <tbody>
-                <tr>
-                  <th align="left">Student level</th>
-                </tr>
-                <tr>
-                  <td>${lead.level}</td>
-                </tr>
-                ${
-                  lead.subjects
-                    ? `<tr><th align="left">Subjects</th></tr><tr><td>${lead.subjects}</td></tr>`
-                    : ''
-                }
-                ${
-                  lead.goals
-                    ? `<tr><th align="left">Goals & context</th></tr><tr><td>${lead.goals}</td></tr>`
-                    : ''
-                }
+                <tr><th align="left">Subjects</th></tr><tr><td>${lead.subjects}</td></tr>
+                <tr><th align="left">Year group</th></tr><tr><td>${lead.studentYear}</td></tr>
+                <tr><th align="left">Target</th></tr><tr><td>${lead.target}</td></tr>
+                ${lead.timeline ? `<tr><th align="left">Timeline</th></tr><tr><td>${lead.timeline}</td></tr>` : ''}
+                ${lead.preferredSlots ? `<tr><th align="left">Preferred slots</th></tr><tr><td>${lead.preferredSlots}</td></tr>` : ''}
+                ${lead.location ? `<tr><th align="left">Location</th></tr><tr><td>${lead.location}</td></tr>` : ''}
                 <tr>
                   <th align="left">Contact</th>
                 </tr>

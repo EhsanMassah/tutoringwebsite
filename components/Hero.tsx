@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import LeadForm from './LeadForm'
 
 export default function Hero() {
@@ -9,48 +10,58 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,23,42,0.4)_0%,rgba(15,23,42,0)_45%),radial-gradient(circle_at_15%_20%,rgba(248,250,252,0.08),transparent_55%)]" />
         <div className="absolute -right-32 top-20 h-72 w-72 rounded-full bg-amber-300/10 blur-3xl" />
       </div>
-      <div className="relative mx-auto grid max-w-6xl items-start gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
-        <div>
+      <div className="relative mx-auto grid max-w-6xl items-start gap-12 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
+        <div className="space-y-6">
           <span className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-300/80">
-            Premium GCSE · IGCSE · A-level Maths & Science | Kensington & Chelsea
+            Physics & Maths Specialist | London
           </span>
-          <h1 className="mt-6 text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">
-            Maths & Science Tutoring
+          <h1 className="text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">
+            Premium Maths & Physics Tutoring in London
           </h1>
-          <p className="mt-2 text-sm uppercase tracking-[0.3em] text-amber-200/80">Chelsea · Kensington · Knightsbridge · Online</p>
-          <p className="mt-4 max-w-xl text-lg text-slate-200 sm:text-xl">
-            Over 15 years guiding students through GCSE, A-level, IB and elite entrance exams with calm, expert precision across SW London.
+          <p className="text-lg text-slate-200 sm:text-xl">
+            Structured preparation for top grades and top universities.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4">
             <a
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-amber-300 px-7 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-amber-200"
             >
-              Reserve a consultation
+              Enquire for a slot
             </a>
             <a
               className="inline-flex items-center justify-center rounded-full border border-amber-200/40 px-7 py-3 text-sm font-semibold text-amber-200 transition hover:-translate-y-1 hover:border-amber-200 hover:text-white"
-              href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
+              href="/packages"
             >
-              WhatsApp +44 7957 933537
+              View packages
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-300 sm:text-base">
-            <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-amber-300" /> 15+ years of private tutoring
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-amber-300" /> 92% target grade success
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-amber-300" /> Specialist for PAT · ESAT · STEP
-            </span>
+          <p className="text-sm uppercase tracking-[0.3em] text-amber-200/80">Based in London • Limited places • Packages available</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 shadow-lg">
+              <div className="flex items-center gap-4">
+                <div className="relative h-16 w-16 overflow-hidden rounded-full border border-white/20">
+                  <Image src="/images/headshot.jpg" alt="Ehsan Massah headshot" fill sizes="64px" className="object-cover" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.25em] text-amber-200/80">Tutor</p>
+                  <p className="text-lg font-semibold text-white">Ehsan Massah</p>
+                  <p className="text-sm text-slate-300">15+ years guiding GCSE, A-level and Oxbridge candidates.</p>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 shadow-lg">
+              <ul className="space-y-2 text-sm text-slate-200">
+                <li className="flex gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" /> Exam-board aligned practice with timed drills</li>
+                <li className="flex gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" /> Packages for consistency + clear updates to parents</li>
+                <li className="flex gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" /> London-based with online option for busy weeks</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="w-full">
           <div className="rounded-[28px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur">
-            <h2 className="text-lg font-semibold text-white sm:text-xl">Request a private briefing</h2>
-            <p className="mt-2 text-sm text-slate-300 sm:text-base">Outline your child’s goals — I reply within one business day.</p>
+            <h2 className="text-lg font-semibold text-white sm:text-xl">Check availability</h2>
+            <p className="mt-2 text-sm text-slate-300 sm:text-base">Complete the short form — I reply within 24–48 hours.</p>
             <div className="mt-6">
               <LeadForm />
             </div>

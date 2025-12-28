@@ -45,10 +45,11 @@ async function saveLeadToUpstashVector(lead: StoredLead) {
           metadata: {
             name: lead.name,
             email: lead.email,
-            level: lead.level,
+            studentYear: lead.studentYear,
             subjects: lead.subjects || null,
-            goals: lead.goals || null,
+            target: lead.target || null,
             phone: lead.phone || null,
+            location: lead.location || null,
             ip: lead.ip,
             submittedAt: lead.submittedAt
           }

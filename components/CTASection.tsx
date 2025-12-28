@@ -4,9 +4,9 @@ export default function CTASection() {
   return (
     <section className="bg-slate-950 py-20">
       <div className="mx-auto max-w-4xl rounded-[28px] border border-white/10 bg-white/[0.04] px-8 py-16 text-center shadow-2xl backdrop-blur">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">Begin your programme with Ehsan</h2>
+        <h2 className="text-3xl font-semibold text-white sm:text-4xl">Start a Physics & Maths package</h2>
         <p className="mt-4 text-base text-slate-300 sm:text-lg">
-          Share your child’s goals and I’ll outline a bespoke pathway for Maths or Science success.
+          Share year group, targets and timing — I’ll reply with the right package and consultation times.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-5">
           <a

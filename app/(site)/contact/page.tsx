@@ -3,10 +3,10 @@ import LeadForm from '../../../components/LeadForm'
 import { generateSiteMetadata } from '../../../lib/seo'
 
 export const metadata = generateSiteMetadata({
-  title: 'Contact Chelsea Maths Tutor | Speak with Ehsan Massah',
+  title: 'Enquire | Physics & Maths Tutor in London',
   description:
-    'Arrange a private consultation with Ehsan Massah to secure Maths, Further Maths and Science tutoring in Chelsea, Fulham, Kensington and Knightsbridge.',
-  keywords: ['chelsea maths tutor contact', 'kensington science tutor enquiry', 'fulham private tutor phone'],
+    'Check availability for structured Physics & Maths tutoring packages in London. Share year group, targets and timing — I reply within 24–48 hours.',
+  keywords: ['physics tutor enquiry london', 'maths tutor contact london', 'oxbridge interview tutor contact'],
   pathname: '/contact',
 })
 
@@ -37,36 +37,36 @@ export default function ContactPage() {
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Enquiries</p>
-          <h1 className="text-4xl font-semibold text-white sm:text-5xl">Speak with Ehsan Massah</h1>
+          <h1 className="text-4xl font-semibold text-white sm:text-5xl">Check availability</h1>
           <p className="text-sm text-slate-300 leading-relaxed">
-            Outline your child’s objectives and timetable. I reply within one working day with proposed consultation times and next steps.
+            Outline your child’s year group, targets and timeline. I reply within 24–48 hours with proposed consultation times and a recommended package.
             Fast-track support for upcoming exams can usually begin within 48 hours.
           </p>
-        <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-lg backdrop-blur" id="chelsea">
-          <h2 className="text-lg font-semibold text-white">Contact details</h2>
-          <ul className="mt-4 space-y-3 text-sm text-slate-200">
-            <li><span className="font-semibold text-amber-200/80">Phone:</span> <a href="tel:+447957933537" className="underline decoration-amber-200/60 hover:text-white">+44 7957 933537</a></li>
-            <li><span className="font-semibold text-amber-200/80">Email:</span> <a href="mailto:ehsan@cftutoring.com" className="underline decoration-amber-200/60 hover:text-white">ehsan@cftutoring.com</a></li>
-            <li>
-              <span className="font-semibold text-amber-200/80">WhatsApp:</span>{' '}
-              <a
-                href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
-                className="underline decoration-amber-200/60 hover:text-white"
-              >
-                Message instantly
-              </a>
-            </li>
-            <li><span className="font-semibold text-amber-200/80">Hours:</span> Monday–Sunday, 8am–9pm (UK)</li>
-            <li><span className="font-semibold text-amber-200/80">Locations:</span> Chelsea, Kensington, Knightsbridge, Holland Park & online worldwide</li>
-          </ul>
-        </div>
-        <p className="text-xs uppercase tracking-[0.3em] text-amber-200/70">
-          DBS cleared · Safeguarding trained · Fully insured
-        </p>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-lg backdrop-blur" id="chelsea">
+            <h2 className="text-lg font-semibold text-white">Contact details</h2>
+            <ul className="mt-4 space-y-3 text-sm text-slate-200">
+              <li><span className="font-semibold text-amber-200/80">Phone:</span> <a href="tel:+447957933537" className="underline decoration-amber-200/60 hover:text-white">+44 7957 933537</a></li>
+              <li><span className="font-semibold text-amber-200/80">Email:</span> <a href="mailto:ehsan@cftutoring.com" className="underline decoration-amber-200/60 hover:text-white">ehsan@cftutoring.com</a></li>
+              <li>
+                <span className="font-semibold text-amber-200/80">WhatsApp:</span>{' '}
+                <a
+                  href="https://wa.me/447957933537?text=Hi%20Ehsan,%20I%27d%20like%20to%20arrange%20a%20free%20consultation%20for%20Maths%2FScience%20tutoring."
+                  className="underline decoration-amber-200/60 hover:text-white"
+                >
+                  Message instantly
+                </a>
+              </li>
+              <li><span className="font-semibold text-amber-200/80">Hours:</span> Monday–Sunday, 8am–9pm (UK)</li>
+              <li><span className="font-semibold text-amber-200/80">Locations:</span> Chelsea, Kensington, Knightsbridge, Holland Park & online worldwide</li>
+            </ul>
+          </div>
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-200/70">
+            DBS cleared · Safeguarding trained · Fully insured
+          </p>
         </div>
         <div className="rounded-[28px] border border-white/10 bg-white/[0.05] p-8 shadow-xl backdrop-blur">
-          <h2 className="text-xl font-semibold text-white">Request a private briefing with Ehsan</h2>
-          <p className="mt-2 text-sm text-slate-300">Complete the form — it takes less than a minute.</p>
+          <h2 className="text-xl font-semibold text-white">Share a few details</h2>
+          <p className="mt-2 text-sm text-slate-300">I’ll confirm package fit, times and next steps.</p>
           <div className="mt-6">
             <LeadForm />
           </div>
