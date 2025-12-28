@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import headshot from '../public/images/headshot.jpg'
 import LeadForm from './LeadForm'
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
             Physics & Maths Specialist | London
           </span>
           <h1 className="text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">
-            Premium Maths & Physics Tutoring in London
+            Premium Maths & Physics Tutoring
           </h1>
           <p className="text-lg text-slate-200 sm:text-xl">
             Structured preparation for top grades and top universities.
@@ -36,24 +37,33 @@ export default function Hero() {
             </a>
           </div>
           <p className="text-sm uppercase tracking-[0.3em] text-amber-200/80">Based in London • Limited places • Packages available</p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 shadow-lg">
-              <div className="flex items-center gap-4">
-                <div className="relative h-16 w-16 overflow-hidden rounded-full border border-white/20">
-                  <Image src="/images/headshot.jpg" alt="Ehsan Massah headshot" fill sizes="64px" className="object-cover" />
+          <div className="space-y-4">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-8 shadow-lg sm:p-12">
+              <div className="flex items-center gap-7 sm:gap-10">
+                <div className="relative h-36 w-36 overflow-hidden rounded-full border border-white/20 sm:h-44 sm:w-44">
+                  <Image src={headshot} alt="Ehsan Massah headshot" fill sizes="280px" className="object-cover" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-amber-200/80">Tutor</p>
-                  <p className="text-lg font-semibold text-white">Ehsan Massah</p>
-                  <p className="text-sm text-slate-300">15+ years guiding GCSE, A-level and Oxbridge candidates.</p>
+                  <p className="text-3xl font-semibold text-white leading-tight sm:text-4xl">Ehsan Massah</p>
+                  <p className="mt-3 text-sm text-slate-200 sm:text-base">15+ years guiding GCSE, A-level and Oxbridge candidates.</p>
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 shadow-lg">
-              <ul className="space-y-2 text-sm text-slate-200">
-                <li className="flex gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" /> Exam-board aligned practice with timed drills</li>
-                <li className="flex gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" /> Packages for consistency + clear updates to parents</li>
-                <li className="flex gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" /> London-based with online option for busy weeks</li>
+            <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-7 shadow-lg sm:p-8">
+              <ul className="space-y-3 text-sm text-slate-200 sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" />
+                  Exam-board aligned practice with timed drills
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" />
+                  Packages for consistency + clear updates to parents
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-amber-300" aria-hidden="true" />
+                  London-based with online option for busy weeks
+                </li>
               </ul>
             </div>
           </div>
