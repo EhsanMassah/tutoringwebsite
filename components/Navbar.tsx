@@ -12,9 +12,14 @@ const NAV_LINKS = [
   { href: '/contact', label: 'Contact' }
 ]
 
+const HIDE_PATHS = ['/ai-programme', '/ai-programme-waitlist']
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+
+  const hideNav = pathname ? HIDE_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`)) : false
+  if (hideNav) return null
 
   const isActive = (href: string) => pathname === href || (href.includes('#') && pathname === '/')
 

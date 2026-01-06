@@ -1,6 +1,15 @@
+"use client"
 import React from 'react'
+import { usePathname } from 'next/navigation'
+
+const HIDE_PATHS = ['/ai-programme', '/ai-programme-waitlist']
 
 export default function Footer() {
+  const pathname = usePathname()
+  const hideFooter = pathname ? HIDE_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`)) : false
+
+  if (hideFooter) return null
+
   return (
     <footer className="border-t border-white/10 bg-black/60 text-slate-200">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
