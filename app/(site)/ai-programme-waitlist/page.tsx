@@ -6,8 +6,14 @@ import { generateSiteMetadata } from '../../../lib/seo'
 export const metadata = generateSiteMetadata({
   title: 'Join the AI Apprenticeship Waitlist | CF Tutoring',
   description:
-    'Join the waitlist for the boutique AI apprenticeship for exceptional 16-18-year-olds. Application-only, 4-6 students, £5,000. Mentor-led with competitions and build sprints.',
-  keywords: ['AI programme waitlist', 'AI apprenticeship teens', 'CF Tutoring AI programme', 'AI literacy waitlist', 'Oxbridge AI preparation'],
+    'Join the waitlist for the mentor-led AI Intelligence Apprenticeship for exceptional 16-18-year-olds. Boutique cohorts of 4-6 students, £5,000, with build sprints, competitions and personalised mentorship.',
+  keywords: [
+    'AI apprenticeship waitlist',
+    'AI programme for teens',
+    'AI competitions for students',
+    'AI build sprints mentorship',
+    'CF Tutoring AI programme'
+  ],
   pathname: '/ai-programme-waitlist',
 })
 
