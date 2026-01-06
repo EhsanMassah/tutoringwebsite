@@ -4,9 +4,9 @@ import AIWaitlistForm from '../../../components/AIWaitlistForm'
 import { generateSiteMetadata } from '../../../lib/seo'
 
 export const metadata = generateSiteMetadata({
-  title: 'AI Intelligence Apprenticeship Waitlist | CF Tutoring',
+  title: 'Join the AI Apprenticeship Waitlist | CF Tutoring',
   description:
-    'Join the waitlist for the boutique AI intelligence apprenticeship for exceptional 16-18-year-olds. Application-only, 4-6 students per cohort, £5,000.',
+    'Join the waitlist for the boutique AI apprenticeship for exceptional 16-18-year-olds. Application-only, 4-6 students, £5,000. Mentor-led with competitions and build sprints.',
   keywords: ['AI programme waitlist', 'AI apprenticeship teens', 'CF Tutoring AI programme', 'AI literacy waitlist', 'Oxbridge AI preparation'],
   pathname: '/ai-programme-waitlist',
 })

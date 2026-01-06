@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
 
 type WaitlistValues = {
   email: string
@@ -17,6 +18,7 @@ const DEFAULT_SUBJECT = 'AI Intelligence Apprenticeship Waitlist'
 const DEFAULT_LOCATION = 'Waitlist (London hybrid)'
 
 export default function AIWaitlistForm() {
+  const router = useRouter()
   const { register, handleSubmit, reset, setError, formState } = useForm<WaitlistValues>({
     mode: 'onSubmit',
     defaultValues: {
@@ -62,7 +64,7 @@ export default function AIWaitlistForm() {
           packageConsent: true,
           hp: '',
         })
-        alert('You are on the waitlist — I’ll follow up within 24 hours.')
+        router.push('/ai-programme-waitlist/thank-you')
       } else {
         const payload = await res.json().catch(() => ({}))
         alert(payload?.error || 'Failed to submit')
