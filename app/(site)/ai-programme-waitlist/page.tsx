@@ -139,7 +139,7 @@ export default function AIProgrammeWaitlistPage() {
                 ))}
               </ul>
               <div className="rounded-2xl border border-cyan-200/30 bg-cyan-200/10 p-4 text-sm text-cyan-50 shadow-inner shadow-cyan-200/20">
-                The programme builds clarity before tools — avoiding "AI shortcut" narratives that harm admissions positioning.
+                The programme builds clarity before tools — avoiding &ldquo;AI shortcut&rdquo; narratives that harm admissions positioning.
               </div>
             </div>
           </div>
