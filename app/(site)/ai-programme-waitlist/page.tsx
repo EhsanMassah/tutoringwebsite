@@ -62,10 +62,6 @@ const INSTRUCTORS = [
     name: 'Ehsan Massah',
     role: 'Programme Lead · Maths Specialist',
     education: 'MSc, Theoretical Physics',
-    affiliationLogo: {
-      src: '/images/Imperial_College_London.png',
-      alt: 'Imperial College London',
-    },
     experience: '15+ years tutoring and admissions coaching across Oxbridge, Imperial and Ivy pathways.',
     photo: '/images/headshot.jpg',
   },
@@ -73,11 +69,6 @@ const INSTRUCTORS = [
     name: 'Instructor Placeholder',
     role: 'AI Strategy Mentor',
     education: 'Top-tier university (CS/AI)',
-    affiliationLogo: {
-      src: '/images/UCL.png',
-      alt: 'University College London',
-      className: 'h-8 w-auto',
-    },
     experience: 'Research or industry experience guiding students through applied AI cases.',
     photo: '/images/Logos-3.svg',
   },
@@ -85,13 +76,6 @@ const INSTRUCTORS = [
     name: 'Instructor Placeholder',
     role: 'Applied AI / Competitions',
     education: 'STEM postgraduate background',
-    affiliationLogo: {
-      src: '/images/University_of_Oxford.png',
-      alt: 'University of Oxford',
-      width: 240,
-      height: 60,
-      className: 'h-12 w-auto',
-    },
     experience: 'Supports competition submissions and mini-project execution.',
     photo: '/images/Logos-2.svg',
   },
@@ -214,18 +198,6 @@ export default function AIProgrammeWaitlistPage() {
                 <p className="text-sm text-slate-200">
                   <span className="text-slate-400">Education:</span> {person.education}
                 </p>
-                {person.affiliationLogo ? (
-                  <div className="mt-2 flex items-center gap-2 text-sm text-slate-200">
-                    <span className="text-slate-400">Affiliation:</span>
-                    <Image
-                      src={person.affiliationLogo.src}
-                      alt={person.affiliationLogo.alt}
-                      width={person.affiliationLogo.width ?? 120}
-                      height={person.affiliationLogo.height ?? 32}
-                      className={`h-6 w-auto object-contain ${person.affiliationLogo.className ?? ''}`}
-                    />
-                  </div>
-                ) : null}
                 <p className="mt-2 text-sm text-slate-200 leading-relaxed">
                   <span className="text-slate-400">Experience:</span> {person.experience}
                 </p>
