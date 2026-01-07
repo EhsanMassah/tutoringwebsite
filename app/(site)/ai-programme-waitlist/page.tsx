@@ -84,7 +84,7 @@ const INSTRUCTORS = [
 export default function AIProgrammeWaitlistPage() {
   return (
     <div className="bg-slate-950 text-slate-100">
-      <section className="relative overflow-hidden border-b border-cyan-200/10 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_12%,rgba(34,211,238,0.14),transparent_42%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(12,20,38,0.8)_0%,rgba(2,6,23,0.95)_55%)]" />
@@ -98,12 +98,6 @@ export default function AIProgrammeWaitlistPage() {
               <Image src="/images/Logos-3.svg" alt="CF Tutoring logo" width={90} height={32} className="h-7 w-auto" priority />
               <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">New programme by CF Tutors</span>
             </div>
-            <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">
-              Waitlist open
-            </span>
-            <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">
-              Application-only
-            </span>
           </div>
           <div className="mt-8 space-y-8 text-center lg:space-y-10">
             <div className="space-y-6">
@@ -117,7 +111,7 @@ export default function AIProgrammeWaitlistPage() {
                 {SIGNALS.map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-2xl border border-cyan-200/30 bg-white/5 p-5 shadow-[0_0_30px_rgba(34,211,238,0.22)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200/60"
+                    className="depth-card rounded-2xl border border-cyan-200/30 bg-white/5 p-5 backdrop-blur"
                   >
                     <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-100">{item.label}</p>
                     <p className="mt-2 text-xl font-semibold text-white">{item.value}</p>
@@ -145,7 +139,7 @@ export default function AIProgrammeWaitlistPage() {
                 {WHY_NOW.map((item) => (
                   <div
                     key={item.title}
-                    className="relative overflow-hidden rounded-2xl border border-cyan-200/25 bg-white/5 p-4 text-left backdrop-blur shadow-[0_0_22px_rgba(34,211,238,0.16)]"
+                    className="depth-card relative overflow-hidden rounded-2xl border border-cyan-200/25 bg-white/5 p-4 text-left backdrop-blur"
                   >
                     <span className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
                       <span
@@ -158,9 +152,14 @@ export default function AIProgrammeWaitlistPage() {
                   </div>
                 ))}
               </div>
-              <div className="rounded-2xl border border-cyan-200/30 bg-cyan-200/10 p-6 text-center shadow-inner shadow-cyan-200/20">
-                <p className="text-lg font-semibold text-white sm:text-xl">
-                  Students who learn to think deeply alongside AI early will shape the next decade.
+              <div className="depth-card relative inline-flex items-center overflow-hidden rounded-[32px] border border-cyan-200/50 bg-gradient-to-r from-slate-900/80 via-cyan-900/20 to-slate-900/70 px-6 py-4 text-center">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-cyan-300/15 via-transparent to-transparent"
+                  style={{ clipPath: 'polygon(0 0, 100% 0, 70% 100%, 0 100%)' }}
+                />
+                <p className="relative text-xl font-semibold text-white sm:text-2xl">
+                  Thinking with AI is the New Advantage
                 </p>
               </div>
             </div>
@@ -185,7 +184,7 @@ export default function AIProgrammeWaitlistPage() {
             {INSTRUCTORS.map((person) => (
               <div
                 key={person.name}
-                className="rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-5 shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur"
+                className="depth-card rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-5 backdrop-blur"
               >
                 <div className="mb-4 flex items-center gap-4">
                   <div className="relative h-20 w-20 overflow-hidden rounded-full border border-cyan-200/30 bg-slate-900 shadow-[0_0_18px_rgba(34,211,238,0.35)]">
@@ -220,7 +219,7 @@ export default function AIProgrammeWaitlistPage() {
             </h2>
           </div>
           <div className="mx-auto max-w-4xl">
-            <div className="space-y-4 rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-6 text-center shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur">
+            <div className="space-y-4 rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-6 text-center backdrop-blur">
               <p className="relative inline-flex items-center gap-2 text-base font-semibold uppercase tracking-[0.3em] text-cyan-100 sm:text-lg">
                 What’s unique
                 <span
@@ -232,7 +231,7 @@ export default function AIProgrammeWaitlistPage() {
                 {PROOF_POINTS.map((item) => (
                   <div
                     key={item.title}
-                    className="relative overflow-hidden rounded-2xl border border-cyan-200/25 bg-white/5 p-4 text-left backdrop-blur shadow-[0_0_22px_rgba(34,211,238,0.16)]"
+                    className="depth-card relative overflow-hidden rounded-2xl border border-cyan-200/25 bg-white/5 p-4 text-left backdrop-blur"
                   >
                     <span className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
                       <span
@@ -250,10 +249,14 @@ export default function AIProgrammeWaitlistPage() {
         </div>
       </section>
 
-      <section id="waitlist" className="bg-slate-950/70">
+      <section id="waitlist" className="bg-transparent">
         <div className="mx-auto max-w-5xl px-6 py-16">
-          <div className="rounded-[28px] border border-cyan-200/30 bg-gradient-to-br from-slate-900/85 via-slate-900/60 to-slate-950/85 p-8 shadow-[0_0_38px_rgba(34,211,238,0.3)] backdrop-blur">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div className="depth-card rounded-[28px] border border-cyan-200/25 bg-gradient-to-br from-slate-900/85 via-slate-900/60 to-slate-950/85 p-8 backdrop-blur">
+            <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden="true">
+              <div className="absolute -top-10 left-10 h-64 w-64 rounded-full bg-cyan-300/10 blur-[120px]" />
+              <div className="absolute bottom-0 right-4 h-48 w-48 rounded-full bg-emerald-300/10 blur-[110px]" />
+            </div>
+            <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
               <div className="space-y-4">
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-100">Waitlist</p>
                 <h2 className="relative inline-flex items-center gap-2 text-3xl font-semibold text-white">
@@ -267,7 +270,7 @@ export default function AIProgrammeWaitlistPage() {
                   Limited cohort. Reviewed individually.
                 </p>
               </div>
-              <div className="rounded-[24px] border border-cyan-200/30 bg-slate-950/80 p-6 shadow-[0_0_24px_rgba(34,211,238,0.25)]">
+              <div className="depth-card rounded-[24px] border border-cyan-200/30 bg-slate-950/80 p-6">
                 <AIWaitlistForm />
               </div>
             </div>

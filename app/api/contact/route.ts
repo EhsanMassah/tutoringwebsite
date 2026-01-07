@@ -82,24 +82,37 @@ export async function POST(req: Request) {
       console.warn('ADMIN_EMAIL not configured — skipping admin notification')
     }
 
+    const isWaitlist = (normalizedLead.subjects || '').toLowerCase().includes('waitlist') || (normalizedLead.location || '').toLowerCase().includes('waitlist')
     const autoresponderEnabled = transporter && process.env.AUTOREPLY_DISABLED !== 'true'
     if (autoresponderEnabled && transporter) {
-      const subject = process.env.AUTOREPLY_SUBJECT || 'Your private tutoring briefing'
-      const bodyText =
-        process.env.AUTOREPLY_BODY ||
-        `Hi ${normalizedLead.name},
+      const subject = isWaitlist
+        ? (process.env.AUTOREPLY_SUBJECT || 'AI Apprenticeship Waitlist — Confirmation')
+        : (process.env.AUTOREPLY_SUBJECT || 'Your private tutoring briefing')
+
+      const bodyText = isWaitlist
+        ? (process.env.AUTOREPLY_BODY ||
+          `Hi ${normalizedLead.name},
+
+You’re on the waitlist for the AI Intelligence Apprenticeship. I’ll review your note and follow up with the next available cohort details and a brief call slot.
+
+For anything urgent, you can WhatsApp me on +44 7957 933537.
+
+Thank you,
+Ehsan Massah`)
+        : (process.env.AUTOREPLY_BODY ||
+          `Hi ${normalizedLead.name},
 
 Thank you for your message — I’ll reply within one business day with a bespoke lesson plan, recommended package and consultation times. For anything urgent you can reach me on +44 7957 933537.
 
 Best wishes,
-Ehsan Massah`
+Ehsan Massah`)
 
       await transporter.sendMail({
         from: process.env.SMTP_FROM || ADMIN_EMAIL || 'no-reply@massah-inst.com',
         to: normalizedLead.email,
         subject,
         text: bodyText,
-        html: buildAutoReplyHtml(normalizedLead),
+        html: isWaitlist ? buildWaitlistAutoReplyHtml(normalizedLead) : buildTutoringAutoReplyHtml(normalizedLead),
       })
     }
 
@@ -115,7 +128,84 @@ Ehsan Massah`
   }
 }
 
-function buildAutoReplyHtml(lead: ContactInput) {
+function buildWaitlistAutoReplyHtml(lead: ContactInput) {
+  const cyan = '#22d3ee'
+  const emerald = '#34d399'
+  const slate900 = '#0a1324'
+  const slate800 = '#0f172a'
+  const slate400 = '#94a3b8'
+
+  const firstName = lead.name?.split(' ')[0] || 'There'
+
+  return `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Thank you</title>
+      <style>
+        body { margin:0; font-family:'Inter','Helvetica Neue',Arial,sans-serif; background:${slate900}; color:#e2e8f0; }
+        .outer { width:100%; padding:40px 0; background:radial-gradient(circle at 12% 20%, rgba(34,211,238,0.16), transparent 42%), radial-gradient(circle at 88% 16%, rgba(52,211,153,0.12), transparent 38%), linear-gradient(180deg, #0a1324 0%, #081021 100%); }
+        .container { max-width:720px; margin:0 auto; padding:0 28px; }
+        .card { position:relative; background:linear-gradient(135deg, rgba(15,23,42,0.9), rgba(8,16,33,0.92)); border-radius:32px; padding:44px; border:1px solid rgba(34,211,238,0.22); box-shadow:0 26px 60px rgba(0,0,0,0.45), 0 0 30px rgba(34,211,238,0.15); overflow:hidden; }
+        .card::after { content:''; position:absolute; inset:-10% -20% auto auto; width:50%; height:50%; background:linear-gradient(135deg, rgba(34,211,238,0.28), transparent 70%); clip-path:polygon(0 0, 100% 0, 0 100%); opacity:0.6; }
+        h1 { font-size:32px; margin:16px 0 18px; color:#fff; letter-spacing:-0.02em; }
+        p { font-size:16px; line-height:1.8; color:#cbd5e1; margin:0 0 14px; }
+        .signature { font-size:18px; color:${cyan}; margin-top:24px; font-weight:600; }
+        .pill { display:inline-block; border-radius:999px; padding:9px 20px; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; background:rgba(34,211,238,0.15); color:${cyan}; border:1px solid rgba(34,211,238,0.35); font-weight:700; }
+        .divider { height:1px; background:linear-gradient(90deg, transparent, rgba(34,211,238,0.4), transparent); margin:28px 0; }
+        .details-table { width:100%; border-collapse:collapse; }
+        .details-table th { text-align:left; font-size:11px; letter-spacing:0.28em; color:${cyan}; padding:10px 0 2px; text-transform:uppercase; }
+        .details-table td { padding:6px 0 14px; font-size:15px; color:#f8fafc; border-bottom:1px solid rgba(148,163,184,0.16); }
+        .cta { margin-top:34px; }
+        .cta a { text-decoration:none; display:inline-block; padding:14px 34px; border-radius:999px; background:linear-gradient(90deg, ${cyan}, ${emerald}); color:#0b1223; letter-spacing:0.28em; font-size:12px; font-weight:700; box-shadow:0 0 24px rgba(34,211,238,0.35); }
+        .footer { text-align:center; margin-top:28px; color:${slate400}; font-size:12px; line-height:1.8; font-family:'Inter','Helvetica Neue',Arial,sans-serif; }
+      </style>
+    </head>
+    <body>
+      <div class="outer">
+        <div class="container">
+          <div class="card">
+            <span class="pill">AI Apprenticeship Waitlist</span>
+            <h1>Welcome, ${firstName}.</h1>
+            <p>You’re on the waitlist for the AI Intelligence Apprenticeship. I’ll review your note and reply with cohort timing, a short call slot, and how we assess fit.</p>
+            <p>For anything time-sensitive, WhatsApp or call <a style="color:${cyan}; text-decoration:none;" href="tel:+447957933537">+44 7957 933537</a> — you’ll reach me directly.</p>
+
+            <div class="divider"></div>
+            <table class="details-table">
+              <tbody>
+                <tr><th align="left">Interest</th></tr><tr><td>${lead.subjects}</td></tr>
+                <tr><th align="left">Year group</th></tr><tr><td>${lead.studentYear}</td></tr>
+                <tr><th align="left">Goal</th></tr><tr><td>${lead.target}</td></tr>
+                ${lead.timeline ? `<tr><th align="left">Timeline</th></tr><tr><td>${lead.timeline}</td></tr>` : ''}
+                ${lead.preferredSlots ? `<tr><th align="left">Preferred slots</th></tr><tr><td>${lead.preferredSlots}</td></tr>` : ''}
+                ${lead.location ? `<tr><th align="left">Location</th></tr><tr><td>${lead.location}</td></tr>` : ''}
+                <tr>
+                  <th align="left">Contact</th>
+                </tr>
+                <tr>
+                  <td>${lead.email}${lead.phone ? ` · ${lead.phone}` : ''}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="cta">
+              <a href="mailto:${process.env.ADMIN_EMAIL || 'ehsan@cftutoring.com'}?subject=Add%20details%20to%20my%20AI%20apprenticeship%20waitlist">Add more context</a>
+            </div>
+
+            <p class="signature">— Ehsan</p>
+          </div>
+
+          <div class="footer">
+            CF Tutoring · AI Intelligence Apprenticeship · Sessions in London & online
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>`
+}
+
+function buildTutoringAutoReplyHtml(lead: ContactInput) {
   const accent = '#fcd34d'
   const slate900 = '#0f172a'
   const slate800 = '#1e293b'
@@ -152,17 +242,17 @@ function buildAutoReplyHtml(lead: ContactInput) {
       <div class="outer">
         <div class="container">
           <div class="card">
-            <span class="pill">Chelsea · Kensington · Fulham</span>
+            <span class="pill">Private tutoring</span>
             <h1>Thank you, ${firstName}.</h1>
-            <p>I’ve received your note and am already shaping a private briefing that matches your child’s ambition, calendar and preferred format. I’ll be in touch within one business day with consultation times and a proposed pathway.</p>
-            <p>For anything time-sensitive, feel free to WhatsApp or call <a style="color:${highlight}; text-decoration:none;" href="tel:+447957933537">+44 7957 933537</a> — you always reach me directly.</p>
+            <p>I’ve received your note and am shaping a private briefing that matches your goals, calendar, and preferred format. I’ll send consultation times and a proposed pathway shortly.</p>
+            <p>For anything time-sensitive, WhatsApp or call <a style="color:${highlight}; text-decoration:none;" href="tel:+447957933537">+44 7957 933537</a> — you’ll reach me directly.</p>
 
             <div class="divider"></div>
             <table class="details-table">
               <tbody>
-                <tr><th align="left">Subjects</th></tr><tr><td>${lead.subjects}</td></tr>
-                <tr><th align="left">Year group</th></tr><tr><td>${lead.studentYear}</td></tr>
-                <tr><th align="left">Target</th></tr><tr><td>${lead.target}</td></tr>
+                <tr><th align="left">Subjects</th></tr><tr><td>${lead.subjects || '—'}</td></tr>
+                <tr><th align="left">Year group</th></tr><tr><td>${lead.studentYear || '—'}</td></tr>
+                <tr><th align="left">Target</th></tr><tr><td>${lead.target || '—'}</td></tr>
                 ${lead.timeline ? `<tr><th align="left">Timeline</th></tr><tr><td>${lead.timeline}</td></tr>` : ''}
                 ${lead.preferredSlots ? `<tr><th align="left">Preferred slots</th></tr><tr><td>${lead.preferredSlots}</td></tr>` : ''}
                 ${lead.location ? `<tr><th align="left">Location</th></tr><tr><td>${lead.location}</td></tr>` : ''}
