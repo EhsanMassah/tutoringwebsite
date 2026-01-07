@@ -173,17 +173,13 @@ function buildWaitlistAutoReplyHtml(lead: ContactInput) {
             <div class="divider"></div>
             <table class="details-table">
               <tbody>
-                <tr><th align="left">Interest</th></tr><tr><td>${lead.subjects}</td></tr>
-                <tr><th align="left">Year group</th></tr><tr><td>${lead.studentYear}</td></tr>
-                <tr><th align="left">Goal</th></tr><tr><td>${lead.target}</td></tr>
-                ${lead.timeline ? `<tr><th align="left">Timeline</th></tr><tr><td>${lead.timeline}</td></tr>` : ''}
-                ${lead.preferredSlots ? `<tr><th align="left">Preferred slots</th></tr><tr><td>${lead.preferredSlots}</td></tr>` : ''}
-                ${lead.location ? `<tr><th align="left">Location</th></tr><tr><td>${lead.location}</td></tr>` : ''}
+                <tr><th align="left">Interest</th></tr><tr><td>AI Intelligence Apprenticeship</td></tr>
+                <tr><th align="left">Location</th></tr><tr><td>London / Hybrid</td></tr>
                 <tr>
                   <th align="left">Contact</th>
                 </tr>
                 <tr>
-                  <td>${lead.email}${lead.phone ? ` · ${lead.phone}` : ''}</td>
+                  <td>${lead.email}</td>
                 </tr>
               </tbody>
             </table>
@@ -196,7 +192,7 @@ function buildWaitlistAutoReplyHtml(lead: ContactInput) {
           </div>
 
           <div class="footer">
-            CF Tutoring · AI Intelligence Apprenticeship · Sessions in London & online
+            CF Tutoring · AI Intelligence Apprenticeship · Sessions in London & Online
           </div>
         </div>
       </div>
