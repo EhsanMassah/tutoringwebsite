@@ -61,7 +61,11 @@ const INSTRUCTORS = [
   {
     name: 'Ehsan Massah',
     role: 'Programme Lead · Maths Specialist',
-    education: 'MSc, Imperial College (Theoretical Physics)',
+    education: 'MSc, Theoretical Physics',
+    affiliationLogo: {
+      src: '/images/Imperial_College_London_new_logo.png',
+      alt: 'Imperial College London',
+    },
     experience: '15+ years tutoring and admissions coaching across Oxbridge, Imperial and Ivy pathways.',
     photo: '/images/headshot.jpg',
   },
@@ -69,6 +73,10 @@ const INSTRUCTORS = [
     name: 'Instructor Placeholder',
     role: 'AI Strategy Mentor',
     education: 'Top-tier university (CS/AI)',
+    affiliationLogo: {
+      src: '/images/University_of_Oxford.png',
+      alt: 'University of Oxford',
+    },
     experience: 'Research or industry experience guiding students through applied AI cases.',
     photo: '/images/Logos-3.svg',
   },
@@ -76,6 +84,10 @@ const INSTRUCTORS = [
     name: 'Instructor Placeholder',
     role: 'Applied AI / Competitions',
     education: 'STEM postgraduate background',
+    affiliationLogo: {
+      src: '/images/UCL.png',
+      alt: 'University College London',
+    },
     experience: 'Supports competition submissions and mini-project execution.',
     photo: '/images/Logos-2.svg',
   },
@@ -172,7 +184,7 @@ export default function AIProgrammeWaitlistPage() {
           <div className="space-y-2 text-center">
             <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-100">Instructors</p>
             <h2 className="relative inline-flex items-center justify-center gap-2 text-3xl font-semibold text-white sm:text-4xl">
-              Mentors who teach judgment, not shortcuts
+              Experienced Mentors from Leading Academic Institutions
               <span
                 aria-hidden="true"
                 className="absolute left-0 right-0 -bottom-2 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-80"
@@ -198,6 +210,18 @@ export default function AIProgrammeWaitlistPage() {
                 <p className="text-sm text-slate-200">
                   <span className="text-slate-400">Education:</span> {person.education}
                 </p>
+                {person.affiliationLogo ? (
+                  <div className="mt-2 flex items-center gap-2 text-sm text-slate-200">
+                    <span className="text-slate-400">Affiliation:</span>
+                    <Image
+                      src={person.affiliationLogo.src}
+                      alt={person.affiliationLogo.alt}
+                      width={120}
+                      height={32}
+                      className="h-6 w-[120px] object-contain"
+                    />
+                  </div>
+                ) : null}
                 <p className="mt-2 text-sm text-slate-200 leading-relaxed">
                   <span className="text-slate-400">Experience:</span> {person.experience}
                 </p>

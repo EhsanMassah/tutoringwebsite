@@ -166,7 +166,7 @@ function buildWaitlistAutoReplyHtml(lead: ContactInput) {
         <div class="container">
           <div class="card">
             <span class="pill">AI Apprenticeship Waitlist</span>
-            <h1>Welcome, ${firstName}.</h1>
+            <p style="font-size:16px; line-height:1.8; color:#cbd5e1; margin:18px 0 14px;">Hi ${firstName},</p>
             <p>You’re on the waitlist for the AI Intelligence Apprenticeship. I’ll review your note and reply with cohort timing, a short call slot, and how we assess fit.</p>
             <p>For anything time-sensitive, WhatsApp or call <a style="color:${cyan}; text-decoration:none;" href="tel:+447957933537">+44 7957 933537</a> — you’ll reach me directly.</p>
 
