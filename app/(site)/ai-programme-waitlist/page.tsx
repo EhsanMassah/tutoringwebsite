@@ -63,7 +63,7 @@ const INSTRUCTORS = [
     role: 'Programme Lead · Maths Specialist',
     education: 'MSc, Theoretical Physics',
     affiliationLogo: {
-      src: '/images/Imperial_College_London_new_logo.png',
+      src: '/images/Imperial_College_London.png',
       alt: 'Imperial College London',
     },
     experience: '15+ years tutoring and admissions coaching across Oxbridge, Imperial and Ivy pathways.',
@@ -74,8 +74,9 @@ const INSTRUCTORS = [
     role: 'AI Strategy Mentor',
     education: 'Top-tier university (CS/AI)',
     affiliationLogo: {
-      src: '/images/University_of_Oxford.png',
-      alt: 'University of Oxford',
+      src: '/images/UCL.png',
+      alt: 'University College London',
+      className: 'h-8 w-auto',
     },
     experience: 'Research or industry experience guiding students through applied AI cases.',
     photo: '/images/Logos-3.svg',
@@ -85,8 +86,11 @@ const INSTRUCTORS = [
     role: 'Applied AI / Competitions',
     education: 'STEM postgraduate background',
     affiliationLogo: {
-      src: '/images/UCL.png',
-      alt: 'University College London',
+      src: '/images/University_of_Oxford.png',
+      alt: 'University of Oxford',
+      width: 240,
+      height: 60,
+      className: 'h-12 w-auto',
     },
     experience: 'Supports competition submissions and mini-project execution.',
     photo: '/images/Logos-2.svg',
@@ -216,9 +220,9 @@ export default function AIProgrammeWaitlistPage() {
                     <Image
                       src={person.affiliationLogo.src}
                       alt={person.affiliationLogo.alt}
-                      width={120}
-                      height={32}
-                      className="h-6 w-[120px] object-contain"
+                      width={person.affiliationLogo.width ?? 120}
+                      height={person.affiliationLogo.height ?? 32}
+                      className={`h-6 w-auto object-contain ${person.affiliationLogo.className ?? ''}`}
                     />
                   </div>
                 ) : null}
