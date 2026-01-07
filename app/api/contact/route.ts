@@ -132,7 +132,6 @@ function buildWaitlistAutoReplyHtml(lead: ContactInput) {
   const cyan = '#22d3ee'
   const emerald = '#34d399'
   const slate900 = '#0a1324'
-  const slate800 = '#0f172a'
   const slate400 = '#94a3b8'
 
   const firstName = lead.name?.split(' ')[0] || 'There'
