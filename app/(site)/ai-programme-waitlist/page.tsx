@@ -4,36 +4,57 @@ import AIWaitlistForm from '../../../components/AIWaitlistForm'
 import { generateSiteMetadata } from '../../../lib/seo'
 
 export const metadata = generateSiteMetadata({
-  title: 'Join the AI Apprenticeship Waitlist | CF Tutoring',
+  title: 'AI Intelligence Apprenticeship Waitlist | CF Tutoring',
   description:
-    'A mentor-led programme for exceptional teens | Selective, small cohort | Real-world AI projects',
+    'Join the waitlist for the boutique AI intelligence apprenticeship for exceptional 16–18-year-olds. Application-only, 4–6 students per cohort, £5,000.',
   keywords: [
-    'AI apprenticeship waitlist',
-    'AI programme for teens',
-    'AI competitions for students',
-    'AI build sprints mentorship',
-    'CF Tutoring AI programme'
+    'AI programme waitlist',
+    'AI apprenticeship teens',
+    'CF Tutoring AI programme',
+    'AI literacy waitlist',
+    'Oxbridge AI preparation'
   ],
   pathname: '/ai-programme-waitlist',
 })
 
 const SIGNALS = [
-  { label: 'Cohort Size', value: '4-6 Students' },
+  { label: 'Cohort Size', value: '4–6 Students' },
   { label: 'Real-World Exposure', value: 'Competitions & Hackathons' },
   { label: 'Format', value: 'Build sprints & Mentorship' },
 ]
 
 const WHY_NOW = [
-  'AI is unavoidable; admissions now assess judgment with AI, not whether AI is used.',
-  'Schools lag behind modern AI practice, leaving students with shallow guidance.',
-  'Families need a principled, exclusive path before their children rely on shortcuts.',
+  {
+    title: 'AI is becoming unavoidable.',
+    body: 'Universities and employers now assume students will use AI. The question is no longer if, but how well.',
+  },
+  {
+    title: 'Most teenagers are learning AI in shallow ways.',
+    body: 'Schools lag behind real-world practice, leaving students either restricted or reliant on shortcuts.',
+  },
+  {
+    title: 'The future rewards those who can think, not just produce.',
+    body: 'As AI automates routine tasks, advantage shifts to students who can frame problems, reason clearly, and build original solutions.',
+  },
 ]
 
 const PROOF_POINTS = [
-  'Mentorship from top academic institutions',
-  'Competition-grade cases and applied mini-project',
-  'Personal AI usage framework suitable for UCAS/interviews',
-  'Serious, scarcity-driven positioning — not a mass-market bootcamp',
+  {
+    title: 'Mentorship-led, not content-led',
+    body: 'Students work directly with experienced mentors affiliated with leading academic institutions, including Cambridge, Oxford, Imperial, and UCL.',
+  },
+  {
+    title: 'Small by design',
+    body: 'Cohorts of 4-6 students enable genuine discussion, individual feedback, and intellectual depth.',
+  },
+  {
+    title: 'Real problems, real outputs',
+    body: 'Students work on applied projects and participate in competitions and hackathons, with opportunities to publish work, gain recognition, and compete for prizes.',
+  },
+  {
+    title: 'For serious, high-potential students',
+    body: 'Admission is selective. Applicants complete technical interviews covering mathematics and coding to ensure the cohort is well-matched.',
+  },
 ]
 
 const INSTRUCTORS = [
@@ -60,30 +81,22 @@ const INSTRUCTORS = [
   },
 ]
 
-const DSUET = [
-  { title: 'Define', copy: 'Clarify the problem and success criteria before any tool is chosen.' },
-  { title: 'Select', copy: 'LLM vs classifier vs embeddings - including when to avoid AI altogether.' },
-  { title: 'Use', copy: 'Operate pre-trained models, APIs and notebooks with control and intent.' },
-  { title: 'Evaluate', copy: 'Bias, hallucination, overconfidence, leakage - verify before trusting.' },
-  { title: 'Trust', copy: 'Human-in-the-loop judgment and ethical boundaries.' },
-]
-
 export default function AIProgrammeWaitlistPage() {
   return (
     <div className="bg-slate-950 text-slate-100">
       <section className="relative overflow-hidden border-b border-cyan-200/10 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_12%,rgba(34,211,238,0.16),transparent_42%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(12,20,38,0.82)_0%,rgba(2,6,23,0.95)_55%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:120px_120px]" />
-          <div className="absolute right-4 top-6 h-72 w-72 rounded-full bg-cyan-300/15 blur-[120px]" />
-          <div className="absolute -left-10 bottom-6 h-64 w-64 rounded-full bg-emerald-300/12 blur-[120px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_12%,rgba(34,211,238,0.14),transparent_42%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(12,20,38,0.8)_0%,rgba(2,6,23,0.95)_55%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:120px_120px]" />
+          <div className="absolute right-4 top-10 h-64 w-64 rounded-full bg-cyan-300/15 blur-[110px]" />
+          <div className="absolute -left-10 bottom-10 h-60 w-60 rounded-full bg-emerald-300/10 blur-[110px]" />
         </div>
-        <div className="relative mx-auto max-w-6xl px-6 py-20 lg:py-24">
+        <div className="relative mx-auto max-w-5xl px-6 py-16 lg:py-20">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <div className="flex items-center gap-2 rounded-full border border-cyan-200/30 bg-white/5 px-3 py-2 shadow-[0_0_24px_rgba(34,211,238,0.25)]">
               <Image src="/images/Logos-3.svg" alt="CF Tutoring logo" width={90} height={32} className="h-7 w-auto" priority />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">New programme by CF Tutoring</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">New programme by CF Tutors</span>
             </div>
             <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">
               Waitlist open
@@ -91,79 +104,88 @@ export default function AIProgrammeWaitlistPage() {
             <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-100">
               Application-only
             </span>
-            <span className="rounded-full border border-emerald-200/40 bg-emerald-200/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-emerald-50">
-              Pilot cohort — applications open
-            </span>
           </div>
-          <div className="mt-10 space-y-10 text-center lg:space-y-12">
+          <div className="mt-8 space-y-8 text-center lg:space-y-10">
             <div className="space-y-6">
-              <h1 className="text-5xl font-semibold leading-[1.05] text-white drop-shadow-[0_10px_45px_rgba(34,211,238,0.35)] sm:text-6xl md:text-7xl animate-hero-rise">
+              <h1 className="text-4xl font-semibold leading-[1.05] text-white drop-shadow-[0_10px_45px_rgba(34,211,238,0.35)] sm:text-5xl md:text-6xl">
                 Join the AI Apprenticeship for Future Leaders
               </h1>
               <p className="mx-auto max-w-3xl text-base text-slate-200 sm:text-lg">
                 A mentor-led pathway introducing exceptional teenagers to applied artificial intelligence and modern problem-solving.
               </p>
-              <div className="flex flex-wrap justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-cyan-100">
-                <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1">4-6 students</span>
-                <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1">Mentor-led</span>
-                <span className="rounded-full border border-cyan-200/40 bg-cyan-200/10 px-3 py-1">Project sprints</span>
-              </div>
-              <div className="grid gap-5 sm:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-3">
                 {SIGNALS.map((item) => (
                   <div
                     key={item.label}
-                    className="h-full rounded-2xl border border-cyan-200/30 bg-white/5 p-5 shadow-[0_0_30px_rgba(34,211,238,0.22)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200/60"
+                    className="rounded-2xl border border-cyan-200/30 bg-white/5 p-5 shadow-[0_0_30px_rgba(34,211,238,0.22)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200/60"
                   >
                     <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-100">{item.label}</p>
                     <p className="mt-2 text-xl font-semibold text-white">{item.value}</p>
                   </div>
                 ))}
               </div>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex justify-center">
                 <a
                   href="#waitlist"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-300 via-emerald-300 to-cyan-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.45)] transition hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]"
                 >
                   Join the waitlist
                 </a>
-                <a
-                  href="#unique"
-                  className="inline-flex items-center justify-center rounded-full border border-cyan-200/50 px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-100 transition hover:-translate-y-1 hover:border-cyan-100 hover:text-white"
-                >
-                  See outcomes
-                </a>
               </div>
             </div>
-            <div className="mx-auto max-w-4xl space-y-5 rounded-[24px] border border-cyan-200/30 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-slate-950/80 p-6 shadow-[0_0_38px_rgba(34,211,238,0.28)] backdrop-blur text-left">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-100">Why now</p>
-              <ul className="space-y-3 text-sm text-slate-200">
+            <div className="mx-auto max-w-4xl space-y-5 rounded-[24px] border border-cyan-200/30 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-slate-950/80 p-6 text-center shadow-[0_0_38px_rgba(34,211,238,0.28)] backdrop-blur">
+              <p className="relative inline-flex items-center gap-2 text-base font-semibold uppercase tracking-[0.3em] text-cyan-100 sm:text-lg">
+                Why now
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 right-0 -bottom-2 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-80"
+                />
+              </p>
+              <div className="mx-auto space-y-3 text-sm text-slate-200 sm:max-w-3xl">
                 {WHY_NOW.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-cyan-300" aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
+                  <div
+                    key={item.title}
+                    className="relative overflow-hidden rounded-2xl border border-cyan-200/25 bg-white/5 p-4 text-left backdrop-blur shadow-[0_0_22px_rgba(34,211,238,0.16)]"
+                  >
+                    <span className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
+                      <span
+                        className="absolute right-0 top-0 h-20 w-20 bg-gradient-to-bl from-cyan-300/20 via-emerald-200/10 to-transparent"
+                        style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
+                      />
+                    </span>
+                    <p className="font-semibold text-white">{item.title}</p>
+                    <p className="mt-2 text-slate-200">{item.body}</p>
+                  </div>
                 ))}
-              </ul>
-              <div className="rounded-2xl border border-cyan-200/30 bg-cyan-200/10 p-4 text-sm text-cyan-50 shadow-inner shadow-cyan-200/20">
-                The programme builds clarity before tools — avoiding &ldquo;AI shortcut&rdquo; narratives that harm admissions positioning.
+              </div>
+              <div className="rounded-2xl border border-cyan-200/30 bg-cyan-200/10 p-6 text-center shadow-inner shadow-cyan-200/20">
+                <p className="text-lg font-semibold text-white sm:text-xl">
+                  Students who learn to think deeply alongside AI early will shape the next decade.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-white/5 bg-slate-950/70">
-        <div className="mx-auto max-w-6xl px-6 py-20 space-y-8">
+      <section className="bg-transparent">
+        <div className="mx-auto max-w-6xl px-6 py-14 space-y-8">
           <div className="space-y-2 text-center">
             <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-100">Instructors</p>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Mentors who teach judgment, not shortcuts</h2>
+            <h2 className="relative inline-flex items-center justify-center gap-2 text-3xl font-semibold text-white sm:text-4xl">
+              Mentors who teach judgment, not shortcuts
+              <span
+                aria-hidden="true"
+                className="absolute left-0 right-0 -bottom-2 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-80"
+              />
+            </h2>
             <p className="text-sm text-slate-300">Led personally and supported by AI specialists for competition and project depth.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {INSTRUCTORS.map((person) => (
               <div
                 key={person.name}
-                className="rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-5 shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-100/50"
+                className="rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-5 shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur"
               >
                 <div className="mb-4 flex items-center gap-4">
                   <div className="relative h-20 w-20 overflow-hidden rounded-full border border-cyan-200/30 bg-slate-900 shadow-[0_0_18px_rgba(34,211,238,0.35)]">
@@ -186,35 +208,40 @@ export default function AIProgrammeWaitlistPage() {
         </div>
       </section>
 
-      <section id="unique" className="border-b border-white/5 bg-slate-900/70">
-        <div className="mx-auto max-w-6xl px-6 py-20 space-y-10">
-          <div className="space-y-3">
-            <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-100">What’s unique</p>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">Judgment, mentorship, and applied outputs</h2>
+      <section className="bg-transparent">
+        <div className="mx-auto max-w-6xl px-6 py-14 space-y-10">
+          <div className="space-y-3 text-center">
+            <h2 className="relative inline-flex items-center gap-2 text-3xl font-semibold text-white sm:text-4xl">
+              Learning AI through Problems, not Prompts
+              <span
+                aria-hidden="true"
+                className="absolute left-0 right-0 -bottom-2 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-80"
+              />
+            </h2>
           </div>
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-4 rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-6 shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200/50">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-100">Proof points</p>
-              <ul className="space-y-3 text-sm text-slate-200">
-                {PROOF_POINTS.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-cyan-300" aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-slate-300">
-                Pricing is transparent: £5,000 for the full 10-session programme including mentorship. We interview each student before
-                confirming a place.
+          <div className="mx-auto max-w-4xl">
+            <div className="space-y-4 rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-6 text-center shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur">
+              <p className="relative inline-flex items-center gap-2 text-base font-semibold uppercase tracking-[0.3em] text-cyan-100 sm:text-lg">
+                What’s unique
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 right-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-80"
+                />
               </p>
-            </div>
-            <div className="space-y-4 rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-950/80 p-6 shadow-[0_0_28px_rgba(34,211,238,0.2)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200/50">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-100">The DSUET pipeline</p>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {DSUET.map((item) => (
-                  <div key={item.title} className="h-full rounded-xl border border-cyan-200/30 bg-slate-950/70 p-4 shadow-[0_0_18px_rgba(34,211,238,0.18)] transition hover:-translate-y-1 hover:border-cyan-100/60">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-100">{item.title}</p>
-                    <p className="mt-2 text-sm text-slate-200 leading-relaxed">{item.copy}</p>
+              <div className="space-y-3 text-sm text-slate-200">
+                {PROOF_POINTS.map((item) => (
+                  <div
+                    key={item.title}
+                    className="relative overflow-hidden rounded-2xl border border-cyan-200/25 bg-white/5 p-4 text-left backdrop-blur shadow-[0_0_22px_rgba(34,211,238,0.16)]"
+                  >
+                    <span className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
+                      <span
+                        className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-bl from-cyan-300/20 via-emerald-200/10 to-transparent"
+                        style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
+                      />
+                    </span>
+                    <p className="font-semibold text-white">{item.title}</p>
+                    <p className="mt-2 leading-relaxed text-slate-200">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -224,21 +251,21 @@ export default function AIProgrammeWaitlistPage() {
       </section>
 
       <section id="waitlist" className="bg-slate-950/70">
-        <div className="mx-auto max-w-5xl px-6 py-20">
+        <div className="mx-auto max-w-5xl px-6 py-16">
           <div className="rounded-[28px] border border-cyan-200/30 bg-gradient-to-br from-slate-900/85 via-slate-900/60 to-slate-950/85 p-8 shadow-[0_0_38px_rgba(34,211,238,0.3)] backdrop-blur">
             <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
               <div className="space-y-4">
                 <p className="text-[11px] uppercase tracking-[0.32em] text-cyan-100">Waitlist</p>
-                <h2 className="text-3xl font-semibold text-white">Be first in line for the next cohort</h2>
+                <h2 className="relative inline-flex items-center gap-2 text-3xl font-semibold text-white">
+                  Request early access
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-0 right-0 -bottom-2 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-80"
+                  />
+                </h2>
                 <p className="text-sm text-slate-300 leading-relaxed">
-                  I reply within 24 hours. If there is a fit, we schedule a short call to confirm goals and timing. Places are held only after
-                  interview — the waitlist secures priority contact.
+                  Limited cohort. Reviewed individually.
                 </p>
-                <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100">
-                  <span className="rounded-full border border-cyan-200/30 bg-cyan-200/10 px-3 py-1">Scarcity matters</span>
-                  <span className="rounded-full border border-cyan-200/30 bg-cyan-200/10 px-3 py-1">Direct contact</span>
-                  <span className="rounded-full border border-cyan-200/30 bg-cyan-200/10 px-3 py-1">No mass email</span>
-                </div>
               </div>
               <div className="rounded-[24px] border border-cyan-200/30 bg-slate-950/80 p-6 shadow-[0_0_24px_rgba(34,211,238,0.25)]">
                 <AIWaitlistForm />
