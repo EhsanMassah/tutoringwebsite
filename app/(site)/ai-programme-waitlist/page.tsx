@@ -68,7 +68,7 @@ const INSTRUCTORS = [
   {
     name: 'Ivan Shalashilin',
     role: 'Quantum Algorithms Mentor',
-    education: 'PhD student, EPSRC CDT in Quantum Computation and Quantum Communications',
+    education: 'PhD, Quantum Computation and Quantum Communications',
     experience: 'Builds tensor network algorithms for many-body physics and machine learning on quantum computers.',
     photo: '/images/ivan_sh.jpeg',
   },
