@@ -62,6 +62,7 @@ const INSTRUCTORS = [
     name: 'Ehsan Massah',
     role: 'Programme Lead · Maths Specialist',
     education: 'MSc, Theoretical Physics',
+    affiliation: 'Imperial College',
     experience: '15+ years tutoring and admissions coaching across Oxbridge, Imperial and Ivy pathways.',
     photo: '/images/headshot.jpg',
   },
@@ -69,6 +70,7 @@ const INSTRUCTORS = [
     name: 'Ivan Shalashilin',
     role: 'Quantum Algorithms Mentor',
     education: 'PhD, Quantum Computation and Quantum Communications',
+    affiliation: 'Imperial College · UCL',
     experience: 'Builds tensor network algorithms for many-body physics and machine learning on quantum computers.',
     photo: '/images/ivan_sh.jpeg',
   },
@@ -76,6 +78,7 @@ const INSTRUCTORS = [
     name: 'Instructor Placeholder',
     role: 'Applied AI / Competitions',
     education: 'STEM postgraduate background',
+    affiliation: 'Leading research university',
     experience: 'Supports competition submissions and mini-project execution.',
     photo: '/images/Logos-2.svg',
   },
@@ -197,6 +200,9 @@ export default function AIProgrammeWaitlistPage() {
                 </div>
                 <p className="text-sm text-slate-200">
                   <span className="text-slate-400">Education:</span> {person.education}
+                </p>
+                <p className="mt-2 text-sm text-slate-200">
+                  <span className="text-slate-400">Affiliation:</span> {person.affiliation}
                 </p>
                 <p className="mt-2 text-sm text-slate-200 leading-relaxed">
                   <span className="text-slate-400">Experience:</span> {person.experience}
