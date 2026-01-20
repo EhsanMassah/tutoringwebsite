@@ -66,11 +66,11 @@ const INSTRUCTORS = [
     photo: '/images/headshot.jpg',
   },
   {
-    name: 'Instructor Placeholder',
-    role: 'AI Strategy Mentor',
-    education: 'Top-tier university (CS/AI)',
-    experience: 'Research or industry experience guiding students through applied AI cases.',
-    photo: '/images/Logos-3.svg',
+    name: 'Ivan Shalashilin',
+    role: 'Quantum Algorithms Mentor',
+    education: 'PhD student, EPSRC CDT in Quantum Computation and Quantum Communications',
+    experience: 'Builds tensor network algorithms for many-body physics and machine learning on quantum computers. Supervised by Prof. Andrew Green.',
+    photo: '/images/ivan_sh.jpeg',
   },
   {
     name: 'Instructor Placeholder',
