@@ -11,6 +11,16 @@ const STATIC_ROUTES: Array<{ path: string; priority: number; changeFrequency: Me
   { path: '/contact', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/blog', priority: 0.65, changeFrequency: 'weekly' },
   { path: '/maths-and-science-tutors-kensington-chelsea', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/gcse-physics-tutor-london', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/a-level-maths-tutor-london', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/a-level-physics-tutor-london', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/oxbridge-physics-preparation', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/entrance-exam-tutoring-11-plus', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/areas-served', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/testimonials', priority: 0.65, changeFrequency: 'monthly' },
+  { path: '/results', priority: 0.65, changeFrequency: 'monthly' },
+  { path: '/tutor-profile', priority: 0.65, changeFrequency: 'monthly' },
+  { path: '/site-map', priority: 0.5, changeFrequency: 'yearly' },
   { path: '/privacy', priority: 0.4, changeFrequency: 'yearly' },
 ]
 

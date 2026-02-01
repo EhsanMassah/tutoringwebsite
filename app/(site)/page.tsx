@@ -69,6 +69,34 @@ const OUTCOMES = [
   'Admissions coaching for competitive STEM interviews'
 ]
 
+const LANDING_PAGES = [
+  {
+    title: 'GCSE Physics tutor in London',
+    copy: 'Diagnostics, exam technique and confidence building for GCSE Physics.',
+    href: '/gcse-physics-tutor-london'
+  },
+  {
+    title: 'A-Level Maths tutor in London',
+    copy: 'Precision teaching, timed practice and consistent A/A* outcomes.',
+    href: '/a-level-maths-tutor-london'
+  },
+  {
+    title: 'A-Level Physics tutor in London',
+    copy: 'Structured plans for mechanics, fields and practical write-ups.',
+    href: '/a-level-physics-tutor-london'
+  },
+  {
+    title: 'Oxbridge Physics preparation',
+    copy: 'PAT/ESAT training plus interview problem solving.',
+    href: '/oxbridge-physics-preparation'
+  },
+  {
+    title: '11+ entrance exam tutoring',
+    copy: 'Calm, confident Maths and reasoning support for London families.',
+    href: '/entrance-exam-tutoring-11-plus'
+  }
+]
+
 export default function Home() {
   return (
     <div className="bg-slate-950 text-slate-100">
@@ -151,6 +179,29 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16 space-y-8">
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">High-intent tutoring</p>
+          <h2 className="text-3xl font-semibold text-white sm:text-4xl">London tutoring pathways</h2>
+          <p className="text-sm text-slate-300 leading-relaxed">
+            Explore dedicated pages for GCSE, A-Level and admissions support across Chelsea, Kensington and Wimbledon.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {LANDING_PAGES.map((page) => (
+            <a
+              key={page.href}
+              href={page.href}
+              className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-lg backdrop-blur transition hover:-translate-y-1 hover:border-amber-200/70"
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-amber-200/80">{page.title}</p>
+              <p className="mt-3 flex-1 text-sm text-slate-200 leading-relaxed">{page.copy}</p>
+              <span className="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-amber-200/90">Learn more →</span>
+            </a>
+          ))}
         </div>
       </section>
 

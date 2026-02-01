@@ -29,6 +29,9 @@ const AREA_LINKS = [
   { label: 'Chelsea Maths Tutor', href: '/contact#chelsea' },
   { label: 'Kensington Science Tutor', href: '/contact#kensington' },
   { label: 'Fulham Physics Tutor', href: '/contact#fulham' },
+  { label: 'GCSE Physics Tutor London', href: '/gcse-physics-tutor-london' },
+  { label: 'A-Level Maths Tutor London', href: '/a-level-maths-tutor-london' },
+  { label: 'A-Level Physics Tutor London', href: '/a-level-physics-tutor-london' },
 ]
 
 export default function SubjectsPage() {
